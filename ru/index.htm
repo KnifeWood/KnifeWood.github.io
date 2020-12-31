@@ -1,0 +1,1939 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+<script>dataLayer = [{"country":"RU"},{"realCountry":"RUS"},{"cusDimIndex": 4,"cusDimValue":"New Design Wordpress"},{"os":"win"}];</script><style>.async-hide{opacity:0!important}</style>
+<script>
+  function writeExpCookie() {
+    var urlParam = document.location.search;
+    var paramSplit = urlParam.split("&");
+    var _gaexp = getParameter("_gaexpadserver", window.location.href);
+    for (var i = 0; i < paramSplit.length; i++) {
+      if (paramSplit[i].indexOf("_gaexpadserver") > -1 && _gaexp !== "noexp") {
+        createCookie("_gaexp", _gaexp, 90);
+      }
+    }
+  }
+
+  function getParameter(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  function createCookie(name, value, days) {
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      var expires = "; expires=" + date.toGMTString();
+    } else var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  if (checkConsent() === true) {
+    (function(a, s, y, n, c, h, i, d, e) {
+      s.className += " " + y;
+      h.start = 1 * new Date();
+      h.end = i = function() {
+        s.className = s.className.replace(RegExp(" ?" + y), "");
+      };
+      (a[n] = a[n] || []).hide = h;
+      setTimeout(function() {
+        i();
+        h.end = null;
+      }, c);
+      h.timeout = c;
+    })(window, document.documentElement, "async-hide", "dataLayer", 4000, {
+      "GTM-PJJXWCQ": true
+    });
+
+    (function(i, s, o, g, r, a, m) {
+      i["GoogleAnalyticsObject"] = r;
+      (i[r] =
+        i[r] ||
+        function() {
+          (i[r].q = i[r].q || []).push(arguments);
+        }),
+        (i[r].l = 1 * new Date());
+      (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(
+      window,
+      document,
+      "script",
+      "https://www.google-analytics.com/analytics.js",
+      "ga"
+    );
+    ga("create", "UA-32025289-1", "auto", {
+      siteSpeedSampleRate: 100,
+      allowLinker: true,
+      clientId: trakkGetClientIDfromURL().returnClientID() //New
+    });
+    ga("require", "GTM-PJJXWCQ");
+  }
+
+  trakkGetClientIDfromURL().returnClientID();
+
+  //get customized client id
+  function trakkGetClientIDfromURL() {
+    var gaClientidParameterKey = "gaclientid";
+    var clickTimestampParameterKey = "gaclientidtime";
+    var dataLayerEventName = "gaClientIDreceived";
+    return {
+      returnClientID: returnClientID
+    };
+
+    function returnClientID() {
+      var clientID = getClientIdFromURL();
+      var clickTimestamp = getClientIdTimeStamp() || 0;
+      var currentTimeStamp = Date.now() / 1000;
+
+      if (currentTimeStamp - clickTimestamp > 60) {
+        clientID = undefined;
+      }
+      pushClientIDtoDataLayer(clientID);
+      return clientID;
+    }
+
+    function pushClientIDtoDataLayer(clientID) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: dataLayerEventName,
+        clientID: clientID
+      });
+    }
+
+    function getClientIdFromURL() {
+      var urlParam = window.location.search.substring(1);
+      var paramSplit = urlParam.split("&");
+
+      for (var i = 0; i < paramSplit.length; i++) {
+        if (paramSplit[i].indexOf("gaclientid") > -1) {
+          var clientId = paramSplit[i].split("=")[1];
+          return clientId;
+        }
+      }
+    }
+
+    function getClientIdTimeStamp() {
+      var urlParam = document.location.search;
+      var paramSplit = urlParam.split("&");
+      for (var i = 0; i < paramSplit.length; i++) {
+        if (paramSplit[i].indexOf("gaclientidtime") > -1) {
+          var clientIdTimestamp = paramSplit[i].split("=")[1];
+          return clientIdTimestamp;
+        }
+      }
+    }
+  }
+
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-T9RD3NN");
+
+  //read cookie
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  //check if tracking consent
+  function checkConsent() {
+    var consentCookie = readCookie("OptanonConsent");
+    var decoded = decodeURIComponent(consentCookie);
+    if (decoded.indexOf(",2:1,") != -1) {
+      return true;
+    }
+  }
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="msapplication-config" content="none">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="baidu-site-verification" content="wNWFRErSiK">
+<meta name="naver-site-verification" content="8763ea8ce003ca44fa69953b349ae070117703b0">
+<meta name="yandex-verification" content="088dd33e5200ce6a">
+<meta name="theme-color" content="#2b76ad">
+<link rel="apple-touch-icon" href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/favicon.png" />
+<link rel="icon" type="image/png" href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/favicon.png" />
+<meta name="apple-itunes-app" content="app-id=692035811">
+<link rel="preconnect" href="https://static.teamviewer.com" crossorigin><link rel="preconnect" href="https://cdn.cookielaw.org" crossorigin><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><title>TeamViewer — удаленная поддержка, удаленный доступ, служба поддержки, совместная работа онлайн и совещания</title>
+<style type="text/css" id="wpml-ls-inline-styles-additional-css">.wpml-ls-display{display:inline!important;}</style>
+<link rel="alternate" hreflang="cs" href="https://www.teamviewer.com/cs/" />
+<link rel="alternate" hreflang="da" href="https://www.teamviewer.com/da/" />
+<link rel="alternate" hreflang="en" href="https://www.teamviewer.com/en/" />
+<link rel="alternate" hreflang="es" href="https://www.teamviewer.com/es/" />
+<link rel="alternate" hreflang="es-mx" href="https://www.teamviewer.com/es-mx/" />
+<link rel="alternate" hreflang="en-us" href="https://www.teamviewer.com/en-us/" />
+<link rel="alternate" hreflang="fi" href="https://www.teamviewer.com/fi/" />
+<link rel="alternate" hreflang="fr" href="https://www.teamviewer.com/fr/" />
+<link rel="alternate" hreflang="fr-ca" href="https://www.teamviewer.com/fr-ca/" />
+<link rel="alternate" hreflang="de" href="https://www.teamviewer.com/de/" />
+<link rel="alternate" hreflang="hu" href="https://www.teamviewer.com/hu/" />
+<link rel="alternate" hreflang="it" href="https://www.teamviewer.com/it/" />
+<link rel="alternate" hreflang="ja" href="https://www.teamviewer.com/ja/" />
+<link rel="alternate" hreflang="ko" href="https://www.teamviewer.com/ko/" />
+<link rel="alternate" hreflang="nl" href="https://www.teamviewer.com/nl/" />
+<link rel="alternate" hreflang="no" href="https://www.teamviewer.com/no/" />
+<link rel="alternate" hreflang="pl" href="https://www.teamviewer.com/pl/" />
+<link rel="alternate" hreflang="pt-br" href="https://www.teamviewer.com/pt-br/" />
+<link rel="alternate" hreflang="ru" href="https://www.teamviewer.com/ru/" />
+<link rel="alternate" hreflang="sv" href="https://www.teamviewer.com/sv/" />
+<link rel="alternate" hreflang="th" href="https://www.teamviewer.com/th/" />
+<link rel="alternate" hreflang="tr" href="https://www.teamviewer.com/tr/" />
+<link rel="alternate" hreflang="vi" href="https://www.teamviewer.com/vi/" />
+<link rel="alternate" hreflang="zh-cn" href="https://www.teamviewer.cn/cn/" />
+<link rel="alternate" hreflang="zh-tw" href="https://www.teamviewer.com/tw/" />
+<meta name="description" content="Решения для удаленного доступа к рабочему столу от TeamViewer: подключайтесь к компьютерам дистанционно, оказывайте удаленную поддержку и работайте совместно в режиме онлайн ➤ Бесплатно для частных пользователей!" />
+<link rel="canonical" href="https://www.teamviewer.com/ru/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TeamViewer — удаленная поддержка, удаленный доступ, служба поддержки, совместная работа онлайн и совещания" />
+<meta property="og:description" content="Решения для удаленного доступа к рабочему столу от TeamViewer: подключайтесь к компьютерам дистанционно, оказывайте удаленную поддержку и работайте совместно в режиме онлайн ➤ Бесплатно для частных пользователей!" />
+<meta property="og:url" content="https://www.teamviewer.com/ru/" />
+<meta property="og:site_name" content="TeamViewer" />
+<meta property="og:image" content="https://static.teamviewer.com/resources/2018/12/Facebook_v1.png" />
+<meta property="og:image:secure_url" content="https://static.teamviewer.com/resources/2018/12/Facebook_v1.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Решения для удаленного доступа к рабочему столу от TeamViewer: подключайтесь к компьютерам дистанционно, оказывайте удаленную поддержку и работайте совместно в режиме онлайн ➤ Бесплатно для частных пользователей!" />
+<meta name="twitter:title" content="TeamViewer — удаленная поддержка, удаленный доступ, служба поддержки, совместная работа онлайн и совещания" />
+<meta name="twitter:image" content="https://staging-global.teamviewer.com/wp-content/uploads/2018/05/download-on-the-app-store.png" />
+<meta name="google-site-verification" content="-hTFDPBB8nP52_t-B4wW2u7AvNPfFwVtrkvKEEQ-vAk" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.teamviewer.com/ru/#organization","name":"TeamViewer","url":"https://www.teamviewer.com/ru/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://www.teamviewer.com/ru/#logo","url":"https://static.teamviewer.com/resources/2019/07/TeamViewer_Logo_512x512.png","width":512,"height":512,"caption":"TeamViewer"},"image":{"@id":"https://www.teamviewer.com/ru/#logo"}},{"@type":"WebSite","@id":"https://www.teamviewer.com/ru/#website","url":"https://www.teamviewer.com/ru/","name":"TeamViewer","publisher":{"@id":"https://www.teamviewer.com/ru/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://www.teamviewer.com/ru/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.teamviewer.com/ru/#primaryimage","url":"https://staging-global.teamviewer.com/wp-content/uploads/2018/05/download-on-the-app-store.png"},{"@type":"WebPage","@id":"https://www.teamviewer.com/ru/#webpage","url":"https://www.teamviewer.com/ru/","inLanguage":"ru-RU","name":"TeamViewer\u00a0\u2014 \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0430\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430, \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u044b\u0439 \u0434\u043e\u0441\u0442\u0443\u043f, \u0441\u043b\u0443\u0436\u0431\u0430 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0438, \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430 \u043e\u043d\u043b\u0430\u0439\u043d \u0438 \u0441\u043e\u0432\u0435\u0449\u0430\u043d\u0438\u044f","isPartOf":{"@id":"https://www.teamviewer.com/ru/#website"},"about":{"@id":"https://www.teamviewer.com/ru/#organization"},"primaryImageOfPage":{"@id":"https://www.teamviewer.com/ru/#primaryimage"},"datePublished":"2018-10-18T11:07:03+01:00","dateModified":"2020-11-03T09:35:10+01:00","description":"\u0420\u0435\u0448\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u043e\u0433\u043e \u0434\u043e\u0441\u0442\u0443\u043f\u0430 \u043a \u0440\u0430\u0431\u043e\u0447\u0435\u043c\u0443 \u0441\u0442\u043e\u043b\u0443 \u043e\u0442 TeamViewer: \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0430\u0439\u0442\u0435\u0441\u044c \u043a \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u0430\u043c \u0434\u0438\u0441\u0442\u0430\u043d\u0446\u0438\u043e\u043d\u043d\u043e, \u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0439\u0442\u0435 \u0443\u0434\u0430\u043b\u0435\u043d\u043d\u0443\u044e \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0443 \u0438 \u0440\u0430\u0431\u043e\u0442\u0430\u0439\u0442\u0435 \u0441\u043e\u0432\u043c\u0435\u0441\u0442\u043d\u043e \u0432 \u0440\u0435\u0436\u0438\u043c\u0435 \u043e\u043d\u043b\u0430\u0439\u043d \u27a4 \u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u0434\u043b\u044f \u0447\u0430\u0441\u0442\u043d\u044b\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439!"}]}</script>
+<link rel='stylesheet' id='msgbox.css-css' href='https://www.teamviewer.com/wp-content/plugins/wp-hazard-messages/css/msgbox.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-components-css' href='https://www.teamviewer.com/wp-includes/css/dist/components/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tv-theme-home-page-css' href='https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/css/home.min.css?ver=2.0.20' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css' href='https://www.teamviewer.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bsf-Defaults-css' href='https://www.teamviewer.com/wp-content/uploads/smile_fonts/Defaults/Defaults.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ultimate-animate-css' href='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/animate.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='info-box-style-css' href='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/info-box.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='ult_cllink-css' href='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/creative-link.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.teamviewer.com/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
+<script type='text/javascript' async="" src='https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/lazy_load.min.js?ver=2.0.20' id='lazysizes-js'></script>
+<style>
+::-webkit-input-placeholder { 
+color: #777 !important;
+opacity: 1 !important;
+}
+::-moz-placeholder { 
+color: #777 !important;
+opacity: 1 !important;
+}
+:-ms-input-placeholder {
+color: #777 !important;
+opacity: 1;
+}
+ul.phone_number_list { list-style-type: none; padding-left: 0px !important; } 
+ul.phone_number_list li { margin-bottom: 0px !important; }
+.wd-row.wd-row--highlight ul li { color: #fff; }
+.lh_feature_icon img { width:100% !important;  }
+</style><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
+<style>
+.wave, .security-images-section {
+    background-color: #f7f7f9 !important;
+}
+.mobile-device-section h3, .mobile-device-section p {
+    color: #6B829B !important;
+}
+.three-icon-row h2 {
+    text-align: left !important;
+}
+.wd-header a.ult_colorlink.ult-responsive {
+    width: 100%;
+    text-align: left;
+} 
+.aio-icon-component, .wpb_column>.wpb_wrapper .aio-icon-component { margin-bottom:35px } .aio-icon-description { width:100%; display:block; margin-top:0 } .aio-icon-box.left-icon { display:inline-block } .left-icon .aio-icon-left { display:table-cell; vertical-align:top } .left-icon .aio-icon-left .aio-icon, .left-icon .aio-icon-left .aio-icon-img { margin-right:15px } .left-icon .aio-ibd-block { display:table-cell; vertical-align:middle } .left-icon .aio-icon-description, .left-icon .aio-icon-header { float:left; width:100% }
+</style>
+<style>
+.fal {
+    font-weight: 400;
+}
+.wd-header .wd-button a {
+    font-size: 16px !important;
+    margin-bottom: 0px !important;
+}
+div#download-button-home {
+    margin-bottom: 20px !important;
+}
+.wd-button-firstline {
+    width: 100%;
+    text-align: center !important;
+    font-size: 16px !important;
+}
+.wd-button--parallel {
+    float: none !important;
+    margin-right: 0px !important;
+}
+.custom-width a {
+    width: 100% !important;
+}
+.slider-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+    margin-top: -2%;
+}
+.container{
+	width:100%;
+	margin:0 auto;
+	text-align:center;
+        padding-top:12%;
+	padding-bottom:12%
+}
+.container h1, .container p{
+	color: #fff;
+}
+.slider-heading-logo {
+    width: 12%;
+    height: 12%;
+    margin-bottom: 35px;
+}
+.container h1{
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size:70px !important;
+	margin:10px;
+    font-weight: 600;
+font-family: 'Roboto Condensed', sans-serif !important;
+}
+.container p{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin:0;
+	padding:0px 20px;
+    font-weight: 600;
+font-family: Roboto condensed !important;
+}
+.bg1{
+	background-image: url('https://static.teamviewer.com/resources/2020/05/Header-1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.bg2{
+	background-image: url('https://static.teamviewer.com/resources/2020/05/Header-2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.bg3{
+	background-image: url('https://static.teamviewer.com/resources/2020/05/Header-3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.btn{
+	margin:35px;
+}
+.btn a{
+	border:2px solid #fff;
+	border-radius: 50px;
+	padding: 15px 35px;
+	color: #fff;
+	text-decoration: none;
+	background: transparent linear-gradient(90deg, #82B3CF 0%, #94B3C3 100%) 0% 0% no-repeat padding-box;
+	font-size:16px;
+}
+.slider-second-learn-more{
+background: transparent linear-gradient(90deg, #507587 0%, 94B3C3 100%) 0% 0% no-repeat padding-box !important;
+}
+.slider-third-learn-more{
+background: none !important;
+}
+.custom-padding{
+padding-top:15px !important;
+padding-bottom:10px !important;
+}
+.slider-nav {
+text-align: center;
+margin:0 auto;
+}
+.slider-nav i:hover{
+cursor: pointer !important;
+}
+.slider-bottom-buttons {
+    padding: 20px 20px;
+	text-align: center;
+}
+.custom-col {
+    width: 15%;
+    display: inline-block;
+}
+.slider-bottom {
+    margin-top: -9%;
+    position: absolute;
+    width: 100%;
+}
+.button-row {
+    margin-top: -10rem !important;
+    position: absolute !important;
+    margin-bottom: -35px !important;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    margin-left: 0%;
+}
+.button-row .custom-colored-link a{
+color: #038FF4 !important;
+}
+.button-row .custom-colored-link a:hover{
+background-color: #038FF4 !important;
+color: #fff !important;
+}
+/*.button-row .subscription-request a:hover{
+color: #038FF4 !important;
+background-color: #fff !important;
+}*/
+ .custom-border .vc_general.vc_btn3 {
+    border: none !important;
+}
+i.fal.fa-angle-left, i.fal.fa-angle-right {
+    font-size: 25px;
+    color: #fff ;
+    padding: 15px;
+}
+i.fa.fa-circle-o {
+    color: #fff;
+    font-size: 14px;
+}
+.active {
+    background-color: #fff !important;
+    border-radius: 10px;
+}
+h2, h3 {
+    font-family: 'Roboto Condensed', sans-serif !important;
+}
+.three-icon-row {
+margin-bottom: -50px !important;
+}
+.three-icon-row h2{
+  font-size: 24px;
+color: #6B829B;
+font-weight: 700;
+margin-bottom:0;
+}
+
+.three-icon-row p{
+color: #6B829B;
+font-weight: 200;
+}
+.wave-bg-section {
+height:250px;
+}
+.third-col-text {
+    padding: 0px 12% !important;
+}
+.wave-bg-section h2{
+  color: #6B829B !important;
+    font-weight:700 !important;
+}
+.wave-bg-section p{
+color: #6B829B;
+line-height:1.2 !important;
+font-weight:200;
+}
+.three-imagetext-section{
+    margin-top: -12%;
+}
+
+.three-imagetext-section .wd-jumbotron h2{
+color: #6B829B !important;
+    font-weight:700 !important;
+font-size:20px !important;
+}
+.three-imagetext-section .wd-jumbotron p{
+line-height:1.2 !important;
+color: #6B829B !important;
+}
+.three-imagetext-section .wd-jumbotron button{
+border:none !important; 
+color: #038FF4 !important;
+padding-left:0 !important;
+}
+.three-imagetext-section .wd-jumbotron button:hover{
+border:none !important; 
+color: #038FF4 !important;
+background-color: fff!important;
+}
+.wd-jumbotron{
+background:none !important;
+}
+.mobile-device-section  .wd-jumbotron h2{
+color: #038FF4;
+}
+.three-imagetext-section h3 {
+    font-weight: 600;
+    color: #6B829B;
+}
+.three-imagetext-section p {
+    color: #6B829B;
+    height: 170px;
+}
+.three-imagetext-section .wd-button.wd-button--info-inverted a, .three-imagetext-section .wd-button.wd-button--info-inverted button {
+    border: none !important;
+    color: #038FF4 !important;
+    font-weight: bold !important;
+    font-size: 16px;
+}
+.three-imagetext-section .wd-button.wd-button--info-inverted a:hover, .three-imagetext-section .wd-button.wd-button--info-inverted button:hover {
+    background: none !important;
+}
+/*.security-images-section {
+    clip-path: polygon(0 0, 100% 0, 100% 93%, 81% 79%, 68% 78%, 31% 98%, 15% 98%, 0 88%);
+}
+.wave {
+clip-path: polygon(66% 13%, 84% 11%, 100% 3%, 100% 100%, 0 100%, 0 6%, 10% 2%, 29% 2%, 46% 6%);
+}*/
+.mobile-show{
+display:none !important;
+}
+.wd-button-googleplay--external img {
+    margin-top: -15px !important;
+    width: 200px !important;
+    margin-bottom: 0px !important;
+}
+a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-square.vc_btn3-style-flat.vc_btn3-icon-right.vc_btn3-color-grey {
+    text-align: center !important;
+}
+@media only screen and (min-width: 4096px) {
+.three-imagetext-section {
+    margin-top: -12rem;
+}
+.max-row {
+    padding-left: 20% !important;
+    padding-right: 20% !important;
+}
+.three-imagetext-section .vc_figure, .three-imagetext-section .vc_single_image-wrapper, .three-imagetext-section img, .bottom-images .vc_figure, .bottom-images .vc_single_image-wrapper, .bottom-images img{
+    width: 100% !important;
+}
+.button-row {
+    margin-top: -9rem !important;
+}
+}
+@media only screen and (min-width: 3800px) and (max-width: 4095px) {
+.three-imagetext-section {
+    margin-top: -5%;
+}
+.wd-row {
+    padding-left: 25%!important;
+    padding-right: 25%!important;
+}
+.three-imagetext-section .vc_figure, .three-imagetext-section .vc_single_image-wrapper, .three-imagetext-section img, .bottom-images .vc_figure, .bottom-images .vc_single_image-wrapper, .bottom-images img{
+    width: 100% !important;
+}
+}
+@media only screen and (min-width: 3500px) and (max-width: 3800px) {
+.wd-row {
+    padding-left: 25%!important;
+    padding-right: 25%!important;
+}
+.three-imagetext-section .vc_figure, .three-imagetext-section .vc_single_image-wrapper, .three-imagetext-section img, .bottom-images .vc_figure, .bottom-images .vc_single_image-wrapper, .bottom-images img{
+    width: 100% !important;
+}
+.three-imagetext-section {
+    margin-top: -7%;
+}
+}
+@media only screen and (min-width: 3608px) and (max-width: 4096px) {
+.button-row {
+    margin-top: -10rem !important;
+}
+}
+@media only screen and (min-width: 3341px) and (max-width: 3500px) {
+.button-row {
+    margin-top: -10rem !important;
+}
+}
+@media only screen and (min-width: 3300px) and (max-width: 3500px) {
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+@media only screen and (min-width: 3100px) and (max-width: 3300px) {
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+@media only screen and (min-width: 3100px) and (max-width: 3300px) {
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+@media only screen  and (min-width: 2850px) and (max-width: 3100px){
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+@media only screen  and (min-width: 2684px) and (max-width: 2849px){
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+
+@media only screen  and (min-width: 2560px) and (max-width: 2683px){
+.slider-bottom {
+    margin-top: -6%;
+}
+.three-imagetext-section p {
+    height: 200px;
+}
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+@media only screen  and (min-width: 2500px) and (max-width: 2560px){
+.three-imagetext-section {
+    margin-top: -8%;
+}
+.slider-bottom {
+    margin-top: -6%;
+}
+.three-imagetext-section p {
+    height: 200px;
+}
+}
+@media only screen  and (min-width: 2313px) and (max-width: 2559px){
+.button-row {
+    margin-top: -10rem !important;
+}
+}
+@media only screen  and (min-width: 2350px) and (max-width: 2499px){
+.three-imagetext-section {
+    margin-top: -10%;
+}
+.slider-bottom {
+    margin-top: -6%;
+}
+}
+@media only screen  and (min-width: 2100px) and (max-width: 2350px){
+.slider-bottom {
+    margin-top: -6%;
+}
+.three-imagetext-section {
+    margin-top: -10%;
+}
+}
+@media only screen and (min-width: 2560px) and (max-width: 3500px) {
+.slider-bottom {
+    margin-top: -8%;
+}
+.wd-row {
+    padding-left: 23%!important;
+    padding-right: 23%!important;
+}
+.three-imagetext-section {
+    margin-top: -6%;
+}
+.container p {
+    height: 60px;
+}
+}
+/*@media only screen and (min-width: 2559px) and (max-width: 2589px) {
+.button-row {
+    margin-top: -10rem !important;
+}
+}*/
+@media only screen and (min-width: 2006px) and (max-width: 2550px) {
+.slider-bottom {
+    margin-top: -8%;
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 2000px) {
+.three-imagetext-section p {
+    height: auto;
+}
+}
+
+@media only screen  and (min-width: 1750px) and (max-width: 1857px){
+/*a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-square.vc_btn3-style-flat.vc_btn3-icon-right.vc_btn3-color-grey {
+    text-align: left !important;
+}*/
+}
+
+@media only screen  and (min-width: 1550px) and (max-width:1669px){
+/*a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-square.vc_btn3-style-flat.vc_btn3-icon-right.vc_btn3-color-grey {
+    text-align: left !important;
+}*/
+/*.custom-width a {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}*/
+}
+@media only screen  and (min-width: 1451px) and (max-width:1549px){
+.custom-width a {
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+}
+@media only screen  and (min-width: 1366px) and (max-width:1450px){
+/*a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-square.vc_btn3-style-flat.vc_btn3-icon-right.vc_btn3-color-grey {
+    text-align: left !important;
+}*/
+.slider-bottom {
+    margin-top: -10%;
+}
+}
+@media only screen and (min-width: 1050px) and (max-width: 1366px){
+.wd-row {
+    padding-left: 5%!important;
+    padding-right: 5%!important;
+}
+.slider-bottom {
+    margin-top: -11%;
+}
+.container p {
+    height: 60px;
+}
+
+}
+@media only screen and (min-width: 1160px) and (max-width: 1210px){
+.container {
+    padding-top: 15%;
+    padding-bottom: 15%;
+}
+.slider-bottom {
+    margin-top: -14%;
+}
+}
+@media only screen and (min-width: 1100px) and (max-width: 1159px){
+.three-icon-row .left-icon .aio-icon-description{
+    width: 110%;
+}
+.three-icon-row h2 {
+    width: 120% !important;
+}
+}
+@media only screen and (min-width: 1571px) and (max-width: 1810px){
+/*.button-row {
+    margin-top: -10rem !important;
+}
+.slider-bottom {
+    margin-top: -11%;
+}*/
+}
+@media only screen and (min-width: 1538px) and (max-width: 1570px){
+.button-row {
+    margin-top: -11rem !important;
+}
+.slider-bottom {
+    margin-top: -14% !important;
+}
+}
+@media only screen and (min-width: 1366px) and (max-width: 1537px){
+.button-row {
+    margin-top: -12rem !important;
+}
+.slider-bottom {
+    margin-top: -14% !important;
+}
+}
+@media only screen and (min-width: 1333px) and (max-width: 1366px){
+.button-row {
+    margin-top: -11rem !important;
+}}
+@media only screen and (min-width: 1237px) and (max-width: 1310px){
+.button-row {
+    margin-top: -11rem !important;
+}
+.slider-bottom {
+    margin-top: -16%;
+}
+.container {
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+}
+@media only screen and (min-width: 1362px) and (max-width: 1366px){
+.button-row {
+    margin-top: -10rem !important;
+}}
+@media only screen and (min-width: 1102px) and (max-width: 1332px){
+.button-row {
+    margin-top: -12.5rem !important;
+}
+.slider-bottom {
+    margin-top: -25%;
+}
+.container {
+    padding-top: 30%;
+    padding-bottom: 30%;
+}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1099px){
+.container {
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+.container p {
+    height: 56px;
+}
+.three-icon-row {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+.three-icon-row .left-icon .aio-icon-description{
+    width: 110%;
+}
+.three-icon-row h2 {
+    width: 120% !important;
+}
+.three-icon-row .sub-text {
+    height: 56px;
+}
+.slider-bottom {
+    margin-top: -15%;
+}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1101px){
+.slider-bottom {
+    margin-top: -16%;
+}
+.button-row {
+    margin-top: -13.5rem !important;
+}
+.container {
+    padding-top: 25%;
+    padding-bottom: 25%;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+.slider-heading-logo {
+    width: 30% !important;
+}
+.slider-container{
+margin-bottom: 0px !important;
+}
+.button-row {
+    margin-top: 0 !important;
+    position: relative !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    background-color: #253B4D;
+}
+.button-row .vc_column_container{
+width:100% !important;
+margin-bottom:20px; !important;
+}
+.three-icon-row h2{
+font-size: 20px !important;
+line-height:1.2 !important;
+}
+.solution-section-spacer{
+height:0 !important;
+}
+.three-imagetext-section p{
+height:auto !important;
+}
+.third-col-text {
+    padding: 0px 5% !important;
+}
+.container p{
+height: 50px !important;
+}
+.wd-button--parallel p {
+    margin-top: -7%;
+    margin-bottom: 20px !important;
+}
+.wd-header .wd-button a {
+    margin-bottom: 20px !important;
+}
+.ult_main_cl{
+margin-top:15px !important
+}
+.ult_main_cl a{
+font-size:16px !important;
+}
+/*.wd-button--parallel img {
+    margin-top: -1rem !important;
+}*/
+.wd-button--parallel img {
+    margin-top: 4rem;
+    margin-bottom: -2rem !important;
+}
+.btn a {
+    display: block;
+    margin-bottom: 15px;
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 767px){
+.mobile-hide{
+display:none !important;
+}
+.mobile-show{
+display:block !important;
+}
+.container{
+background: rgba(003, 143, 244, 0.3) !important;
+}
+.slider-heading-logo {
+    width: 50%;
+}
+.container h1{
+line-height: 1.2 !important;
+font-size:60px !important;
+height: 140px;
+}
+.container p{
+height: 100px !important;
+}
+.button-row {
+    margin-top: -10% !important;
+    position: relative !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    background-color: #253B4D;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+.button-row a{
+text-align:center !important;
+}
+.solution-section-spacer{
+height:0px !important;
+}
+.security-images-section h2{
+    text-align:center !important;
+font-size: 30px !important;
+    line-height: 1.2 !important;;
+}
+.mobile-inline-section .wpb_wrapper{
+   display:flex !important
+}
+.btn a{
+background: none !important;
+}
+/*.security-images-section {
+    clip-path: polygon(10% 0%, 100% 0, 100% 10%, 100% 95%, 65% 92%, 30% 95%, 0 92%, 0% 60%, 0 0);
+}*/
+.three-imagetext-section {
+    margin-top: -20%;
+}
+.wd-download-mobile {
+    margin-bottom: 35px !important;
+    padding-left: 20px;
+}
+.custom-colored-link, .subscription-request{
+    margin-bottom: 15px !important;
+}
+.wd-jumbotron--padding {
+    padding: 0px 15px !important;
+}
+.wd-button--parallel p {
+    text-align: center !important;
+}
+.custom-margin-bottom {
+    margin-top: 20px;
+}
+.wd-jumbotron--padding {
+    padding: 0px 15px !important;
+}
+.three-imagetext-section figure.wpb_wrapper.vc_figure, .three-imagetext-section .vc_single_image-wrapper.vc_box_border_grey, .three-imagetext-section img {
+    width: 100% !important;
+}
+.wd-header a.ult_colorlink.ult-responsive {
+    width: 100%;
+    text-align: center;
+} 
+.btn a {
+    display: block;
+    margin-bottom: 15px;
+}
+  }
+@media only screen and (min-width: 320px) and (max-width: 450px){
+.container h1{
+	line-height: 1.2 !important;
+font-size:60px !important;
+	}
+.container h1 {
+    height: 150px;
+    padding-left:10px !important;
+      padding-roight:10px;
+}
+.container p {
+    height: 50px;
+}
+.slider-bottom {
+    margin-top: -15%;
+}
+.button-row {
+    margin-top: -11% !important;
+}
+.button-row a{
+margin-bottom:20px !important;
+}
+.wd-download-mobile {
+    margin-bottom: 35px !important;
+    padding-left: 20px;
+}
+.wd-jumbotron--padding {
+    padding: 0px 15px;
+}
+.three-imagetext-section {
+    margin-top: -35%;
+}
+.custom-padding{
+padding-top:30px !important;
+padding-bottom:30px !important;
+}
+.three-icon-row h2{
+font-size:28px !important
+}
+ .mobile-button{
+ width:50% !important;
+ }
+.btn a {
+    display: block;
+    margin-bottom: 15px;
+}.
+a.trial-byn {
+    margin-left: 0%;
+}
+ }
+</style>
+<style>
+/*Sagar - New Four Button Row CSS*/
+.four-button-row {
+    margin-top: -8.5rem !important;
+    position: absolute !important;
+    margin-bottom: -35px !important;
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    margin-left: 0%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+.four-button-row {
+    margin-top: 0 !important;
+    position: relative !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    background-color: #253B4D;
+}
+.four-button-row .vc_column_container{
+    width:100% !important;
+   margin-bottom:20px; !important;
+}
+.four-button-row a{
+	text-align:center !important;
+}
+a.wd-button2.pricing-btn {
+    padding: 10px 50px !important;
+    text-align: center !important;
+    display: table;
+    margin-top: 3%;
+}
+.four-button-row .vc_column-inner, .button-row .vc_column-inner {
+    /* margin-top: -35px !important; */
+}
+.mobile-width {
+    width: 100%;
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 767px){
+.four-button-row {
+    margin-top: -7.8% !important;
+    position: relative !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    background-color: #253B4D;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+.four-button-row a{
+	text-align:center !important;
+}
+margin-bottom:20px !important;
+}
+@media only screen and (min-width: 320px) and (max-width: 736px){
+a.wd-button2.pricing-btn {
+    padding: 10px 50px !important;
+    text-align: center !important;
+    display: table;
+    margin: 0px auto;
+    margin-top: 3%;
+}
+.four-button-row .vc_column-inner {
+    margin-top: -35px !important;
+}
+.custom-colored-link, .subscription-request {
+    margin-bottom: 15px !important;
+    margin-top:25px !important
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 450px){
+.four-button-row{
+    margin-top: -11% !important;
+}
+.four-button-row a{
+	margin-bottom:20px !important;
+}
+}
+
+.wd-header h1 {
+    font-size: 4em !important;
+}
+.wd-header .wd-button a {
+    width: 100% !important;
+}
+/*.download-btn-header .vc_btn3.vc_btn3-size-md.vc_btn3-icon-right:not(.vc_btn3-o-empty) .vc_btn3-icon {
+    right: 5.9rem;
+}*/
+.wd-header .download-btn-header a {
+    color: #038ff4!important;
+    font-weight: 500 !important;
+}
+.wd-header p {
+    font-size: 1.2em !important;
+    line-height: 1.4 !important;
+}
+.ubimax-row img {
+    width: 10rem;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    vertical-align: middle;
+}
+.margin-bottom-row {
+    margin-bottom: 20px !important;
+}
+.teamviewer-row a {
+    color: #fff;
+    font-weight: 400;
+float: left;
+}
+.privacy-link a{
+padding-right: 2.5rem;
+}
+.teamviewer-row {
+    margin-top: 4rem !important;
+}
+.teamviewer-row i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-left: 0.5rem;
+}
+/*@media only screen and (min-width: 1134px) and (max-width: 1850px) {
+.download-btn-header .vc_btn3.vc_btn3-size-md.vc_btn3-icon-right:not(.vc_btn3-o-empty) .vc_btn3-icon {
+        right: 2.5rem;
+}
+}*/
+@media only screen and (min-width: 1025px) and (max-width: 1133px) {
+/*.download-btn-header .vc_btn3.vc_btn3-size-md.vc_btn3-icon-right:not(.vc_btn3-o-empty) .vc_btn3-icon {
+    right: 0.9rem;
+}*/
+/*.mobile-padding a {
+    padding: 24px 25px !important;
+}
+*/
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+/*.download-btn-header .vc_btn3.vc_btn3-size-md.vc_btn3-icon-right:not(.vc_btn3-o-empty) .vc_btn3-icon {
+    right: 0.9rem;
+}*/
+.wd-header img {
+    margin-top: -2.5rem;
+}
+.ubimax-row img {
+    margin-bottom: 0rem !important;
+}
+.wd-header img {
+    margin-top: -0.5rem !important;
+    width: 100% !important;
+}
+.mobile-padding a, .price-mobile-btn a {
+    padding: 14px 25px !important;
+}
+.remote-access-col-1{
+width:100% !important
+}
+.wd-header h1 {
+    text-align: left !important;
+    line-height: 1 !important;
+}
+.ho-sol-btn a {
+    padding: 14px 10px !important;
+}
+.privacy-link a{
+padding-right: 1rem;
+}
+}
+@media only screen and (min-width: 961px) and (max-width: 1005px) {
+.mobile-padding a,.mobile-padding a, .price-mobile-btn a {
+    padding: 14px 25px !important;
+}
+}
+@media only screen and (min-width: 817px) and (max-width: 961px) {
+.price-mobile-btn a, .mobile-padding a{
+    padding: 14px 25px !important;
+}
+.wd-header h1 {
+   font-size:3.2em !important
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 816px) {
+.mobile-padding a, .price-mobile-btn a {
+    padding: 14px 25px !important;
+}
+.wd-header h1 {
+   font-size:3.2em !important
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+.ubimax-row img {
+    margin-bottom: 0rem !important;
+}
+.ubimax-row h2 {
+    margin-bottom: 35px !important;
+}
+.ubimax-row p {
+    text-align: center !important;
+}
+.teamviewer-row a {
+    margin-bottom: 10px !important;
+}
+.teamviewer-row a {
+    float: none;
+    padding-right: 0rem;
+    margin-bottom: 20px !important;
+}
+.mobile-padding {
+    margin-bottom: 20px !important;
+}
+.inline-content{
+display:block !important;
+}
+.inline-content h2{
+margin-right: 0px !important;
+line-height:1.2 !important
+}
+}
+.download-btn-header .wd-button.wd-button--default {
+    margin-bottom: -15px !important;
+}
+/*Sagar*/
+
+/*Gulshan*/
+a.text-decor {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+.inline-content {
+   display:flex;
+justify-content: center !important;
+    margin-bottom: 0 !important;
+}
+.inline-content h2{
+font-size: 25px; 
+margin-bottom: auto; 
+margin-right: 30px;
+}
+.ubimax-row .vc_column-inner{
+margin-top:px !important;
+}
+.ubimax-header {
+    background-attachment: fixed !important;
+}
+.ubimax-header .wd-button a{
+font-size:14px !important;
+padding:14px 10px !important;
+}
+.download-btn-header .wd-button.wd-button--default a{
+    border: 2px solid transparent !important;
+}
+.price-mobile-btn.wd-button.wd-button--highlight-soft a{
+    border: 2px solid transparent !important;
+}
+.download-btn-header.wd-button a:hover, .price-mobile-btn.wd-button a:hover{
+background-color: transparent !important;
+color: #fff !important;
+border:2px solid #fff !important;
+transition: ease all 0.8s;
+}
+.mobile-padding.wd-button a:hover, .ho-sol-btn.wd-button a:hover{
+background-color: #fff !important;
+color:#038ff4!important;
+transition: ease all 0.8s;
+}
+/*@media only screen and (min-width: 2301px) and (max-width: 2500px){
+.price-mobile-btn i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-left: 0.8em !important;
+}
+}
+@media only screen and (min-width: 2001px) and (max-width: 2300px){
+.price-mobile-btn i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-left: 0.8em !important;
+}
+}
+@media only screen and (min-width: 1851px) and (max-width: 2000px){
+.price-mobile-btn i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-left: 1.2em !important;
+}
+}
+@media only screen and (min-width: 1621px) and (max-width: 1850px){
+.price-mobile-btn i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-left: 0.8em !important;
+}
+}*/
+@media only screen and (min-width: 1367px) and (max-width: 1800px){
+.remote-access-col-1{
+width:100% !important
+}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1366px){
+.remote-access-col-1{
+     width:100% !important
+}
+.price-mobile-btn i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-left: 1.2em !important;
+}
+}
+i.vc_btn3-icon.fas.fa-arrow-right {
+    margin-top: 0.1rem;
+}
+@media only screen and (min-width: 1390px) and (max-width: 1890px) {
+.text-description {
+    width: 60%;
+}
+}
+.vc_custom_1597664748382 {
+    background-image: url(https://static.teamviewer.com/resources/2020/08/bg-image1.jpg?id=298179) !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.ubimax-row-inner-col {
+    margin-top: -35px;
+}
+.ubimax-btn {
+    background-color: #fff !important;
+    color: #A80009 !important;
+}
+.ubimax-btn:hover {
+    background-color: #A80009 !important;
+    color: #fff !important;
+}
+.wd-button2 {
+    border-radius: 30px!important;
+    border: 1px solid transparent!important;
+    font-weight: 500!important;
+    text-decoration: none!important;
+    margin: 0px;
+    margin-right: 6px;
+    padding: 10px 30px;
+    white-space: nowrap;
+}
+.wd-header {
+    padding: 70px 0 70px;
+}
+.remote-access-col-1{
+    width: 60%;
+}
+.remote-access-col-2 {
+    width: 40%;
+}
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+.remote-access-col-1 {
+    width: 100% !important;
+}
+.wd-header img {
+    margin-top: 1.5rem !important;
+    width: 50% !important;
+    height: auto !important;
+}
+}
+@media only screen and (min-width: 450px) and (max-width: 768px) {
+.wd-header .wd-button-googleplay--external img {
+    margin-top: -15px !important;
+    width: 40% !important;
+    margin-bottom: 0px !important;
+    height: auto !important;
+}
+.mobile-button {
+    width: 50%;
+}
+}
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+.remote-access-col-1, .remote-access-col-2 {
+    width: 100%;
+}
+.wd-header h1 {
+    text-align: center !important;
+line-height: 1 !important;
+}
+.wd-header h1 {
+    font-size: 3em !important;
+}
+.wd-header .wd-button-googleplay--external img {
+    margin-top: -15px !important;
+    width: 70%;
+    margin-bottom: 0px !important;
+    height: auto !important;
+}
+}
+</style>
+
+<style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1601964394655{background-image: url(https://static.teamviewer.com/resources/2020/08/bg-image1.jpg?id=298179) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1601964407197{background-image: url(https://static.teamviewer.com/resources/2020/08/bg-image1.jpg?id=298179) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1596794429945{background-image: url(https://static.teamviewer.com/resources/2020/07/bg_header-homepage-new.jpg?id=290775) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592199030035{background: #2c77b0 url(https://static.teamviewer.com/resources/2018/07/people-at-desk-blue-gradient.jpg?id=14541) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592198954317{background: #2c77b0 url(https://static.teamviewer.com/resources/2018/05/people-at-desk-blue-gradient.jpg?id=11128) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1600089844739{background-image: url(https://static.teamviewer.com/resources/2020/06/Banner-1.jpg?id=279555) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592924512181{background-image: url(https://static.teamviewer.com/resources/2020/06/Banner-1.jpg?id=279555) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592924524711{background-image: url(https://static.teamviewer.com/resources/2020/06/Banner-2.jpg?id=279598) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592924536708{background-image: url(https://static.teamviewer.com/resources/2020/06/Banner-3.jpg?id=279712) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592924551854{background-image: url(https://static.teamviewer.com/resources/2020/06/Banner-4.jpg?id=279738) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1597165034393{background-image: url(https://static.teamviewer.com/resources/2020/07/blizz-section-1.jpg?id=295877) !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}.vc_custom_1592807576809{background-color: #ffffff !important;}.vc_custom_1592807582835{background-color: #ffffff !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><script id="wpacu-preload-async-css-fallback">
+    /*! LoadCSS. [c]2017 Filament Group, Inc. MIT License */
+    /* This file is meant as a standalone workflow for
+	- testing support for link[rel=preload]
+	- enabling async CSS loading in browsers that do not support rel=preload
+	- applying rel preload css once loaded, whether supported or not.
+	*/
+    !function(n){"use strict";n.wpacuLoadCSS||(n.wpacuLoadCSS=function(){});var o=wpacuLoadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-wpacuLoadCSS")||(a.setAttribute("data-wpacuLoadCSS",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.wpacuLoadCSS=wpacuLoadCSS:n.wpacuLoadCSS=wpacuLoadCSS}("undefined"!=typeof global?global:this);
+</script>
+</head>
+<body class="home page-template-default page page-id-17137 wpb-js-composer js-comp-ver-6.4.1 vc_responsive">
+<noscript>
+		
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9RD3NN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=57080&fmt=gif" />
+	</noscript>
+<div id="page" class="site">
+<header class="wd-site-header" id="tv-main-header">
+<a href="#tv-main-header" id="mobile_toggle_open" class="mobile_toggle" aria-label="Open or close the mobile menu"></a>
+<a href="#" id="main_mobile_toggle_close" class="mobile_toggle"></a>
+<div class="site-branding">
+<div class="wd-tv-logo">
+<a href="https://www.teamviewer.com/ru/">
+<img src="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/logo-teamviewer.svg" alt="TeamViewer Logo" title="TeamViewer Logo">
+</a>
+</div>
+</div>
+<div class="wd-tv-top-navigation" id="tv-search-box">
+<nav id="site-navigation">
+<div class="wd-tv-container-menu">
+<ul id="tv-top-menu" class="tv-top-menu"><li id="menu-item-185268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185268"><a>Продукты</a>
+<ul class="sub-menu">
+<li id="menu-item-185308" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185308"><a>Продукты</a>
+<ul class="sub-menu">
+<li id="menu-item-185309" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185309"><a href="https://www.teamviewer.com/ru/%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%82%d1%8b/teamviewer/">TeamViewer<div class="menu-item-description">Удаленный доступ и поддержка</div></a></li>
+<li id="menu-item-189002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189002"><a href="/en/teamviewer-tensor/">TeamViewer Tensor<div class="menu-item-description">Платформа для большого бизнеса</div></a></li>
+<li id="menu-item-189003" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189003"><a href="/en/iot/">TeamViewer IoT<div class="menu-item-description">Подключение, Мониторинг, Управление оборудованием</div></a></li>
+<li id="menu-item-185370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185370"><a href="https://www.teamviewer.com/ru/augmented-reality/">TeamViewer Pilot<div class="menu-item-description">Удаленная поддержка в режиме дополненной реальности</div></a></li>
+<li id="menu-item-185378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185378"><a href="https://www.teamviewer.com/ru/remote-management/">TeamViewer Remote Management<div class="menu-item-description">Управление, Мониторинг, Обновление и Защита Ваших устройств</div></a></li>
+<li id="menu-item-232008" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232008"><a href="/en/solutions/support-ticket-system/">TeamViewer Servicecamp<div class="menu-item-description">Тикет Система</div></a></li>
+<li id="menu-item-361217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-361217"><a href="https://www.teamviewer.com/ru/meeting/">TeamViewer Meeting<div class="menu-item-description">Глобальное Общение</div></a></li>
+</ul>
+</li>
+<li id="menu-item-185473" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185473"><a>Дополнительно</a>
+<ul class="sub-menu">
+<li id="menu-item-189192" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189192"><a href="/en/success-stories/">Истории успеха</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-185534" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185534"><a>Решения</a>
+<ul class="sub-menu">
+<li id="menu-item-185579" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185579"><a>Решения</a>
+<ul class="sub-menu">
+<li id="menu-item-185580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185580"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%83%d0%b4%d0%b0%d0%bb%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bf%d0%be%d0%b4%d0%b4%d0%b5%d1%80%d0%b6%d0%ba%d0%b0/">Удаленная поддержка</a></li>
+<li id="menu-item-185581" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185581"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%83%d0%b4%d0%b0%d0%bb%d0%b5%d0%bd%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d1%81%d1%82%d1%83%d0%bf/">Удаленный доступ</a></li>
+<li id="menu-item-185671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185671"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d0%bf%d0%be%d0%b4%d0%b4%d0%b5%d1%80%d0%b6%d0%ba%d0%b0-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d1%83%d1%81%d1%82%d1%80%d0%be%d0%b9%d1%81%d1%82%d0%b2/">Поддержка мобильных устройств</a></li>
+<li id="menu-item-185716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185716"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%81%d0%be%d0%b2%d0%bc%d0%b5%d1%81%d1%82%d0%bd%d0%b0%d1%8f-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b0/">Совместная работа</a></li>
+<li id="menu-item-185717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185717"><a href="https://www.teamviewer.com/ru/remote-management/">ИТ-управление</a></li>
+<li id="menu-item-193133" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193133"><a href="/en/teamviewer-tensor/">Для корпоративных клиентов</a></li>
+<li id="menu-item-361219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-361219"><a href="https://www.teamviewer.com/ru/augmented-reality/">Дополненная реальность</a></li>
+<li id="menu-item-361218" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-361218"><a href="https://www.teamviewer.com/ru/meeting/">Онлайн встречи</a></li>
+<li id="menu-item-361220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-361220"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/support-android-devices/">Поддержка Андроид Устройств</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-185793" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185793"><a>Ресурсы</a>
+<ul class="sub-menu">
+<li id="menu-item-185838" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-185838"><a href="#">Ресурсы</a>
+<ul class="sub-menu">
+<li id="menu-item-193134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193134"><a href="/en/custom-modules/">Настраиваемые модули</a></li>
+<li id="menu-item-193135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193135"><a href="/en/for-developers/">Для разработчиков</a></li>
+<li id="menu-item-185839" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-185839"><a href="https://community.teamviewer.com/?category.id=en">Сообщество</a></li>
+<li id="menu-item-185904" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-185904"><a href="https://community.teamviewer.com/t5/Knowledge-Base/tkb-p/Knowledgebase?_ga=2.12813815.1503713766.1563778129-797906566.1562684420">База знаний</a></li>
+<li id="menu-item-185934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185934"><a href="https://www.teamviewer.com/ru/%d0%b4%d0%be%d0%ba%d1%83%d0%bc%d0%b5%d0%bd%d1%82%d1%8b/">Документы</a></li>
+<li id="menu-item-192256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-192256"><a href="/en/product-training/">TeamViewer Academy</a></li>
+<li id="menu-item-254458" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-254458"><a href="https://www.teamviewer.com/ru/support/">Подать заявку</a></li>
+<li id="menu-item-185936" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-185936"><a href="https://status.teamviewer.com/">Статус системы</a></li>
+<li id="menu-item-186022" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-186022"><a href="/ru/центр-управления-безопасностью/">Центр управления безопасностью</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-186293" class="a1i0s19wd-menu-item__hover menu-item menu-item-type-post_type menu-item-object-page menu-item-186293"><a href="https://www.teamviewer.com/ru/%d1%81%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b2%d0%b0-%d0%b8%d0%bd%d1%82%d0%b5%d0%b3%d1%80%d0%b0%d1%86%d0%b8%d0%b8/">Средства интеграции</a></li>
+<li id="menu-item-200891" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-200891"><a>Партнер</a>
+<ul class="sub-menu">
+<li id="menu-item-186088" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-186088"><a>Партнер</a>
+<ul class="sub-menu">
+<li id="menu-item-186089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-186089"><a href="/en/partner-locations/">Найти партнера</a></li>
+<li id="menu-item-361222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-361222"><a href="https://www.teamviewer.com/ru/become-a-partner/">Стать партнером</a></li>
+<li id="menu-item-264234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-264234"><a href="/en/existing-partner-login/">Логин для зарегестрированных партнеров</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-186294" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-186294"><a>Компания</a>
+<ul class="sub-menu">
+<li id="menu-item-186023" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-186023"><a>О нас</a>
+<ul class="sub-menu">
+<li id="menu-item-186052" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-186052"><a href="https://ir.teamviewer.com/websites/teamviewer/English/1/investor-relations.html">Инвесторам</a></li>
+<li id="menu-item-186051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186051"><a href="https://www.teamviewer.com/ru/%d0%ba%d0%be%d0%bc%d0%bf%d0%b0%d0%bd%d0%b8%d1%8f/">О TeamViewer</a></li>
+</ul>
+</li>
+<li id="menu-item-186135" class="wd-headline-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-186135"><a>Дополнительно</a>
+<ul class="sub-menu">
+<li id="menu-item-186178" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-186178"><a href="https://jobs.teamviewer.com/">Вакансии</a></li>
+<li id="menu-item-186179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-186179"><a href="https://www.teamviewer.com/ru/%d0%ba%d0%be%d0%bc%d0%bf%d0%b0%d0%bd%d0%b8%d1%8f/%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d1%86%d0%b5%d0%bd%d1%82%d1%80/">Пресс-центр</a></li>
+<li id="menu-item-188473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188473"><a href="https://www.teamviewer.com/ru/support/">Поддержка</a></li>
+<li id="menu-item-186180" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-186180"><a href="/ru/support/contact/">Свяжитесь с нами</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-186258" class="wd-button wd-button--highlight-inverted__intensive wd-margin-bottom-zero menu-item-download wd-menu-item--download menu-item menu-item-type-post_type menu-item-object-page menu-item-186258"><a href="https://www.teamviewer.com/ru/%d1%81%d0%ba%d0%b0%d1%87%d0%b0%d1%82%d1%8c/">Скачать</a></li>
+<li id="menu-item-186259" class="wd-button wd-button--highlight-inverted__intensive wd-margin-bottom-zero menu-item-buy-now wd-menu-item--buy-now menu-item menu-item-type-custom menu-item-object-custom menu-item-186259"><a href="/ru/%d0%bf%d1%80%d0%b8%d0%be%d0%b1%d1%80%d0%b5%d1%81%d1%82%d0%b8-%d1%81%d0%b5%d0%b9%d1%87%d0%b0%d1%81/">Приобрести сейчас</a></li>
+</ul> </div>
+</nav>
+<div class="wd-site-search">
+<form method="get" class="wd-search-bar wd-search-bar--menu" action="/ru/">
+<span class="wd-search-bar__wrapper">
+<input type="text" id="tv-search-field" class="wd-search-bar__field" name="s" />
+<button type="submit" class="wd-search-bar__button"><i class="wd-search-bar__icon fal fa-search"></i></button>
+</span>
+<a href="#" class="wd-search-bar__cancel">Cancel</a>
+</form> </div>
+</div>
+<div class="wd-tv-support-navigation">
+<ul class="menu-buttons">
+<li>
+<a href="#tv-search-box" id="tv_search_icon" aria-label="Поиск"><span class="wd-top-menu-icons tv_search_icon"></span></a>
+</li>
+<li>
+<a href="https://login.teamviewer.com/LogOn" target="_blank" id="tv_login_icon" rel="noopener" aria-label="TeamViewer Login Page">
+<span class="wd-top-menu-icons tv_profile_icon"></span>
+</a>
+</li>
+<li class="wd-tv-support-navigation__new-line">
+<a href="/support/contact/" aria-label="TeamViewer Contact Page">
+<span class="wd-top-menu-icons wd-top-menu-icons--plus-text tv_phone_icon"></span>
+<span class="wd-tv-support-navigation__icon-text">
++7 495 283 9316 </span>
+</a>
+</li>
+</ul>
+</div>
+</header>
+<div id="content" class="wd-site-content">
+<div id="primary" class="content-area">
+<main id="main" class="site-main">
+<article id="post-17137" class="post-17137 page type-page status-publish hentry">
+<div class="entry-content">
+<p><div class="upb_bg_img" data-ultimate-bg="url(https://static.teamviewer.com/resources/2018/07/people-at-desk-blue-gradient.jpg)" data-image-id="id^14541|url^https://static.teamviewer.com/resources/2018/07/people-at-desk-blue-gradient.jpg|caption^null|alt^null|title^people-at-desk-blue-gradient|description^null" data-ultimate-bg-style="vcpb-default" data-bg-img-repeat="no-repeat" data-bg-img-size="cover" data-bg-img-position="" data-parallx_sense="30" data-bg-override="0" data-bg_img_attach="scroll" data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="" data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div class="upb_bg_img" data-ultimate-bg="url(https://static.teamviewer.com/resources/2020/08/bg-image1.jpg)" data-image-id="id^298179|url^https://static.teamviewer.com/resources/2020/08/bg-image1.jpg|caption^null|alt^null|title^bg-image(1)|description^null" data-ultimate-bg-style="vcpb-vz-jquery" data-bg-img-repeat="no-repeat" data-bg-img-size="cover" data-bg-img-position="" data-parallx_sense="30" data-bg-override="0" data-bg_img_attach="fixed" data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="" data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid wd-header ubimax-header vc_custom_1601964407197 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"><div class="remote-access-col-1 wpb_column vc_column_container vc_col-sm-6 vc_col-lg-4 vc_col-md-8 vc_col-xs-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<h3 style="text-align: left;margin-bottom: 0px;font-family: 'Roboto Condensed', sans-serif;font-weight: 300">Ваш надёжный партнёр в области</h3>
+<h1 style="text-align: left;font-family: 'Roboto Condensed', sans-serif;font-weight: 600">удаленного доступа и поддержки</h1>
+<p style="text-align: left">Контролируйте, администрируйте, мониторьте и настраивайте компьютеры, мобильные устройства, сетевое оборудование и многое другое где угодно и когда угодно.</p>
+</div>
+</div>
+<div class="vc_row wpb_row vc_inner vc_row-fluid margin-bottom-row"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element  wd-margin-bottom-zero wd-button wd-button--default download-btn-header">
+<div class="wpb_wrapper">
+<div class="vc_btn3-container  wd-button wd-button--default wd-margin-bottom-zero vc_btn3-center"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-block vc_btn3-icon-right vc_btn3-color-grey" href="https://www.teamviewer.com/ru/%d0%b0%d0%b2%d1%82%d0%be%d0%bc%d0%b0%d1%82%d0%b8%d1%87%d0%b5%d1%81%d0%ba%d0%b0%d1%8f-%d0%b7%d0%b0%d0%b3%d1%80%d1%83%d0%b7%d0%ba%d0%b0-teamviewer/" title="">Скачать бесплатно <i class="vc_btn3-icon fas fa-arrow-right"></i></a></div><br />
+<small style="text-align: center;font-size: 80% !important">Бесплатно для частного, некоммерческого использования</small><br />
+</div>
+</div>
+<div class="wpb_text_column wpb_content_element  wd-button wd-button--parallel wd-margin-bottom-zero">
+<div class="wpb_wrapper">
+<p style="text-align: center"></p>
+</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container  wd-button wd-button--highlight-soft wd-margin-bottom-zero price-mobile-btn vc_btn3-center"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-block vc_btn3-icon-right vc_btn3-color-grey" href="https://www.teamviewer.com/ru/%d0%bf%d1%80%d0%b8%d0%be%d0%b1%d1%80%d0%b5%d1%81%d1%82%d0%b8-%d1%81%d0%b5%d0%b9%d1%87%d0%b0%d1%81/" title="">Узнать цены <i class="vc_btn3-icon fas fa-arrow-right"></i></a></div></div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container  wd-button wd-button--default-inverted mobile-padding vc_btn3-center"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-block vc_btn3-icon-right vc_btn3-color-grey" href="https://www.teamviewer.com/ru/content/request-business-trial/" title="">Пробная версия для коммерческого использования <i class="vc_btn3-icon fas fa-arrow-right"></i></a></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid wd-margin-bottom-zero teamviewer-row vc_row-o-equal-height vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element  wd-margin-bottom-zero privacy-link">
+<div class="wpb_wrapper">
+<p><a class="text-decor" href="https://www.teamviewer.com/en/privacy-policy/">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ <i class="vc_btn3-icon fas fa-arrow-right"></i></a></p>
+</div>
+</div>
+<div class="wpb_text_column wpb_content_element  wd-margin-bottom-zero">
+<div class="wpb_wrapper">
+<p><a class="text-decor" href="https://www.teamviewer.com/ru/продукты/teamviewer/">О TeamViewer <i class="vc_btn3-icon fas fa-arrow-right"></i></a></p>
+</div>
+</div>
+</div></div></div></div></div></div></div><div class="remote-access-col-2 wpb_column vc_column_container vc_col-sm-6 vc_col-lg-8 vc_col-md-4 vc_hidden-xs"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="upb_bg_img" data-ultimate-bg="url(https://static.teamviewer.com/resources/2020/08/bg-image1.jpg)" data-image-id="id^298179|url^https://static.teamviewer.com/resources/2020/08/bg-image1.jpg|caption^null|alt^null|title^bg-image(1)|description^null" data-ultimate-bg-style="vcpb-vz-jquery" data-bg-img-repeat="no-repeat" data-bg-img-size="cover" data-bg-img-position="" data-parallx_sense="30" data-bg-override="0" data-bg_img_attach="fixed" data-upb-overlay-color="" data-upb-bg-animation="" data-fadeout="" data-bg-animation="left-animation" data-bg-animation-type="h" data-animation-repeat="repeat" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid wd-row three-icon-row wd-margin-bottom-zero vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_column-gap-5"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="aio-icon-component   wd-margin-bottom-zero style_1"><div id="Info-box-wrap-8784" class="aio-icon-box left-icon" style=""><div class="aio-icon-left"><div class="ult-just-icon-wrapper  "><div class="align-icon" style="text-align:center;">
+<div class="aio-icon-img " style="font-size:100px;display:inline-block;">
+<img class="img-icon" alt="null" src="https://static.teamviewer.com/resources/2020/05/cloud.svg" />
+</div></div></div></div><div class="aio-ibd-block"><div class="aio-icon-description ult-responsive" data-ultimate-target='#Info-box-wrap-8784 .aio-icon-description' data-responsive-json-new='{"font-size":"","line-height":""}' style=""></p>
+<h2>400,000</h2>
+<p class="sub-text">ежедневных загрузок</p>
+<p></div> </div> </div> </div> </div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="aio-icon-component   wd-margin-bottom-zero style_1"><div id="Info-box-wrap-2141" class="aio-icon-box left-icon" style=""><div class="aio-icon-left"><div class="ult-just-icon-wrapper  "><div class="align-icon" style="text-align:center;">
+<div class="aio-icon-img " style="font-size:100px;display:inline-block;">
+<img class="img-icon" alt="null" src="https://static.teamviewer.com/resources/2020/05/Smartphone-1.svg" />
+</div></div></div></div><div class="aio-ibd-block"><div class="aio-icon-description ult-responsive" data-ultimate-target='#Info-box-wrap-2141 .aio-icon-description' data-responsive-json-new='{"font-size":"","line-height":""}' style=""></p>
+<h2>Более 2.5 млрд</h2>
+<p class="sub-text">подключенных устройств</p>
+<p></div> </div> </div> </div> </div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="aio-icon-component   wd-margin-bottom-zero style_1"><div id="Info-box-wrap-6367" class="aio-icon-box left-icon" style=""><div class="aio-icon-left"><div class="ult-just-icon-wrapper  "><div class="align-icon" style="text-align:center;">
+<div class="aio-icon-img " style="font-size:100px;display:inline-block;">
+<img class="img-icon" alt="null" src="https://static.teamviewer.com/resources/2020/05/world.svg" />
+</div></div></div></div><div class="aio-ibd-block"><div class="aio-icon-description ult-responsive" data-ultimate-target='#Info-box-wrap-6367 .aio-icon-description' data-responsive-json-new='{"font-size":"","line-height":""}' style=""></p>
+<h2>До 45 миллионов</h2>
+<p class="sub-text">устройств онлайн одновременно</p>
+<p></div> </div> </div> </div> </div></div></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding vc_row-o-equal-height vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid wd-margin-bottom-zero wave vc_custom_1589378889715 vc_row-has-fill vc_row-o-equal-height vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="third-col-text wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_empty_space  wd-margin-bottom-zero" style="height: 50px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<h2 style="text-align: center;color: #6b829b"><strong>Решения для безопасного рабочего места с возможностью сетевого управления</strong></h2>
+<p style="text-align: center;color: #6b829b">Наши решения для удаленного доступа и поддержки обеспечивают быстрое и безопасное подключение устройств для всех. Благодаря инновациям в технологии и невероятно быстрой и безопасной глобальной сети мы делаем мир удобней, прокладывая путь к действительно глобальному рабочему пространству.</p>
+</div>
+</div>
+<div class="vc_empty_space  wd-margin-bottom-zero solution-section-spacer" style="height: 150px"><span class="vc_empty_space_inner"></span></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-2"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid wd-row three-imagetext-section vc_column-gap-35 vc_row-o-equal-height vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="535" height="350" src="https://static.teamviewer.com/resources/2020/05/solutions-image-15.jpg" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></div>
+</figure>
+</div>
+<div class="wpb_text_column wpb_content_element  wd-row--trimmed-top wd-jumbotron--padding wd-margin-bottom-zero">
+<div class="wpb_wrapper">
+<h3>Работа в удаленном режиме</h3>
+<p>Благодаря службе удаленного доступа и поддержки TeamViewer участники рабочей группы могут эффективно работать в команде, находясь на расстоянии друг от друга. Предоставьте вашим сотрудникам возможность взаимодействовать в любое время, с помощью любых устройств и независимо от расстояний.</p>
+</div>
+</div>
+<div class="vc_btn3-container  wd-button wd-button--info-inverted wd-margin-bottom-zero wd-jumbotron--padding vc_btn3-left"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-icon-right vc_btn3-color-grey" href="https://www.teamviewer.com/ru/%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%82%d1%8b/teamviewer/" title="">Попробуйте самостоятельно <i class="vc_btn3-icon fas fa-chevron-right"></i></a></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="539" height="350" src="https://static.teamviewer.com/resources/2020/05/solutions-image-1-9.jpg" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></div>
+</figure>
+</div>
+<div class="wpb_text_column wpb_content_element  wd-row--trimmed-top wd-jumbotron--padding wd-margin-bottom-zero">
+<div class="wpb_wrapper">
+<h3>Удаленное управление ИТ-средой с помощью доступных инструментов</h3>
+<p>Оптимизируйте и автоматизируйте стандартные ИТ-задачи, такие как мониторинг, защита конечной системы, корректировка параметров и создание резервных копий данных вашей инфраструктуры с помощью инструментов TeamViewer Remote Management, легко реализуемых в TeamViewer.</p>
+</div>
+</div>
+<div class="vc_btn3-container  wd-button wd-button--info-inverted wd-margin-bottom-zero wd-jumbotron--padding vc_btn3-left"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-icon-right vc_btn3-color-grey" href="https://www.teamviewer.com/ru/remote-management/" title="">Попробуйте самостоятельно <i class="vc_btn3-icon fas fa-chevron-right"></i></a></div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="539" height="350" src="https://static.teamviewer.com/resources/2020/05/solutions-image1.jpg" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></div>
+</figure>
+</div>
+<div class="wpb_text_column wpb_content_element  wd-row--trimmed-top wd-jumbotron--padding wd-margin-bottom-zero">
+<div class="wpb_wrapper">
+<h3>Удаленная поддержка любых систем</h3>
+<p>Используйте инструменты TeamViewer IoT, позволяющие повысить интеллектуальные способности вашей машины или системы: за счет высокой скорости удаленного соединения и с помощью встроенных функций удаленной поддержки вы можете осуществлять функции диспетчеризации, управления и мониторинга ваших устройств IoT из любой точки.</p>
+</div>
+</div>
+<div class="vc_btn3-container  wd-button wd-button--info-inverted wd-margin-bottom-zero wd-jumbotron--padding vc_btn3-left"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-icon-right vc_btn3-color-grey" href="https://www.teamviewer.com/en/iot/" title="">Попробуйте самостоятельно <i class="vc_btn3-icon fas fa-chevron-right"></i></a></div></div></div></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="upb_color" data-bg-override="0" data-bg-color="" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid wd-row security-images-section vc_custom_1589796704035 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<h2 style="color: #6b829b">Наша главная цель &#8212; обеспечить надежную связь и защитить <strong>ваши данные</strong></h2>
+</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid wd-margin-bottom-zero vc_column-gap-35 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"><div class="wpb_column vc_column_container vc_col-sm-1/5"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><div class="wpb_column vc_column_container vc_col-sm-3/5"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="900" height="300" src="https://static.teamviewer.com/resources/2020/05/security-logos.jpg" class="vc_single_image-img attachment-full" alt="" loading="lazy" srcset="https://static.teamviewer.com/resources/2020/05/security-logos.jpg 900w, https://static.teamviewer.com/resources/2020/05/security-logos-768x256.jpg 768w" sizes="(max-width: 900px) 100vw, 900px" /></div>
+</figure>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-1/5"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="upb_color" data-bg-override="0" data-bg-color="#f7f7f9" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div class="upb_color" data-bg-override="0" data-bg-color="#f7f7f9" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div class="upb_color" data-bg-override="0" data-bg-color="#f7f7f9" data-fadeout="" data-fadeout-percentage="30" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-img-parallax-mobile-disable="true" data-rtl="false" data-custom-vc-row="" data-vc="6.4.1" data-is_old_vc="" data-theme-support="disable" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size=""></div><div class="vc_row wpb_row vc_row-fluid wd-row mobile-device-section vc_custom_1589632895079 vc_row-has-fill vc_row-o-equal-height vc_row-flex"><div class="wd-jumbotron wd-jumbotron--picture-top wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="650" height="350" src="https://static.teamviewer.com/resources/2020/05/mobile-apps-quick-support-2.png" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></div>
+</figure>
+</div>
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<h3><strong>Используйте TeamViewer для поддержки мобильных устройств</strong></h3>
+<p>TeamViewer &#8212; это первая в мире технология удаленной поддержки, позволяющая демонстрировать экран на устройствах iOS с любого компьютера или мобильного устройства. К Android устройствам можно подключиться похожим образом, что делает нас идеальной платформой для поддержки сотрудников в BYOD или крупной организации с различными видами девайсов.</p>
+</div>
+</div>
+<div class="vc_row wpb_row vc_inner vc_row-fluid wd-margin-bottom-zero tv-apps-download-btn vc_custom_1589548829156 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"><div class="mobile-button wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero wd-download-mobile wd-button-googleplay--external">
+<figure class="wpb_wrapper vc_figure">
+<a href="https://play.google.com/store/apps/details?id=com.teamviewer.quicksupport.market" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="131" height="41" src="https://static.teamviewer.com/resources/2020/05/Google-Play-Icon-1.png" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></a>
+</figure>
+</div>
+</div></div></div><div class="mobile-button wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero wd-download-mobile wd-button-googleplay--external">
+<figure class="wpb_wrapper vc_figure">
+<a href="https://apps.apple.com/us/app/teamviewer-quicksupport/id661649585" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="131" height="41" src="https://static.teamviewer.com/resources/2020/05/IOS-Store-Icon.png" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></a>
+</figure>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="templatera_shortcode wd-margin-bottom-zero"><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><span id="creative-link-wrap-7608" class="ult_main_cl ult-adjust-bottom-margin wd-link ">
+<span class="  ult_crlink">
+<a data-ultimate-target='#creative-link-wrap-7608 .ult_colorlink' data-responsive-json-new='{"font-size":"","line-height":""}' href="https://www.teamviewer.com/en/privacy-policy/" title="Privacy Policy" class="ult_colorlink ult-responsive " style="float:left;font-weight:normal; " data-textcolor="#333333" data-texthover="#333333" data-style="">
+<span data-hover="Privacy Policy" style="color:#333333;;;" class="ult_btn10_span   ">Privacy Policy</span>
+</a>
+</span>
+</span></div></div></div></div></div></div></div></div><div class="wd-jumbotron wd-jumbotron--picture-top wpb_column vc_column_container vc_col-sm-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper   vc_box_border_grey"><img width="650" height="350" src="https://static.teamviewer.com/resources/2020/05/tv-pilot-image-1.jpg" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></div>
+</figure>
+</div>
+<div class="wpb_text_column wpb_content_element ">
+<div class="wpb_wrapper">
+<h3><strong>Дополненная реальность расширяет границы удаленной поддержки</strong></h3>
+<p>Решение дополненной реальности <a href="https://www.teamviewer.com/ru/augmented-reality/">TeamViewer Pilot</a>, позволяет вам решать задачи за пределами экрана &#8212; независимо от того, насколько далеко вы находитесь. Наблюдайте за тем, что видит Ваш клиент, и обеспечьте визуальную поддержку, рисуя и выделяя реальные объекты на экране.<br />
+Загрузите приложение TeamViewer Pilot прямо сейчас и подключитесь к нему с помощью Вашего TeamViewer или узнайте, <a href="https://www.teamviewer.com/ru/%D1%80%D0%B5%D1%88%D0%B5%D0%BD%D0%B8%D1%8F/%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F-%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D1%8C/#getstarted">как приступить к работе</a>:</p>
+</div>
+</div>
+<div class="vc_row wpb_row vc_inner vc_row-fluid wd-margin-bottom-zero vc_custom_1589548839583 vc_row-o-equal-height vc_row-o-content-middle vc_row-flex"><div class="mobile-button wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero wd-download-mobile wd-button-googleplay--external">
+<figure class="wpb_wrapper vc_figure">
+<a href="https://play.google.com/store/apps/details?id=com.teamviewer.pilot" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="131" height="41" src="https://static.teamviewer.com/resources/2020/05/Google-Play-Icon-1.png" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></a>
+</figure>
+</div>
+</div></div></div><div class="mobile-button wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left   wd-margin-bottom-zero wd-download-mobile wd-button-googleplay--external">
+<figure class="wpb_wrapper vc_figure">
+<a href="https://itunes.apple.com/app/teamviewer-pilot/id1436001042" target="_blank" class="vc_single_image-wrapper   vc_box_border_grey"><img width="131" height="41" src="https://static.teamviewer.com/resources/2020/05/IOS-Store-Icon.png" class="vc_single_image-img attachment-full" alt="" loading="lazy" /></a>
+</figure>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div><div class="templatera_shortcode wd-margin-bottom-zero"><div class="vc_row wpb_row vc_row-fluid"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><span id="creative-link-wrap-8229" class="ult_main_cl ult-adjust-bottom-margin wd-link ">
+<span class="  ult_crlink">
+<a data-ultimate-target='#creative-link-wrap-8229 .ult_colorlink' data-responsive-json-new='{"font-size":"","line-height":""}' href="https://www.teamviewer.com/en/privacy-policy/" title="Privacy Policy" class="ult_colorlink ult-responsive " style="float:left;font-weight:normal; " data-textcolor="#333333" data-texthover="#333333" data-style="">
+<span data-hover="Privacy Policy" style="color:#333333;;;" class="ult_btn10_span   ">Privacy Policy</span>
+</a>
+</span>
+</span></div></div></div></div></div></div></div></div></div>
+</div>
+</article>
+</main>
+</div>
+<div class="wd-row wd-row--info-dark-one-color wd-narrow-bar wd-newsletter-bar">
+<div class="wd-narrow-bar__wrapper">
+<span class="wd-narrow-bar__text"><b>Еще?</b></span>
+<span class="wd-narrow-bar__text">Новостная рассылка: эксклюзивные предложения, последние новости!</span>
+<div class="wd-button-newsletter__wrapper">
+<span class="wd-button wd-button--highlight wd-button--highlight__larger">
+<a href="/en/newsletter/" title="Подпишитесь на новостную рассылку">Зарегистрируйтесь</a>
+</span>
+</div>
+</div>
+</div>
+<div class="wd-multi-column-footer">
+<aside id="wd-js-footer-sidebar" class="widget-area wd-footer-sidebar">
+<section id="nav_menu-10" class="widget widget_nav_menu wd-footer-menu"><h3 class="widget-title">Компания</h3><div class="menu-footer_menu_4-russian-2-container"><ul id="menu-footer_menu_4-russian-2" class="menu"><li id="menu-item-224909" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-224909"><a href="https://ir.teamviewer.com/websites/teamviewer/English/1/investor-relations.html">Инвесторам</a></li>
+<li id="menu-item-183790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183790"><a href="https://www.teamviewer.com/ru/%d0%ba%d0%be%d0%bc%d0%bf%d0%b0%d0%bd%d0%b8%d1%8f/">О TeamViewer</a></li>
+<li id="menu-item-183811" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183811"><a target="_blank" rel="noopener noreferrer" href="https://channelpartner.teamviewer.com/">Партнеры по сбыту</a></li>
+<li id="menu-item-183812" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183812"><a target="_blank" rel="noopener noreferrer" href="https://jobs.teamviewer.com/">Вакансии</a></li>
+<li id="menu-item-183855" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183855"><a href="/en/press/">Пресс-центр</a></li>
+<li id="menu-item-183856" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183856"><a href="/ru/support/contact/">Контакты</a></li>
+</ul></div></section><section id="nav_menu-11" class="widget widget_nav_menu wd-footer-menu"><h3 class="widget-title">Продукты</h3><div class="menu-footer_menu_1-russian-2-container"><ul id="menu-footer_menu_1-russian-2" class="menu"><li id="menu-item-183415" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183415"><a href="https://www.teamviewer.com/ru/%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%82%d1%8b/teamviewer/">TeamViewer</a></li>
+<li id="menu-item-361231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-361231"><a href="https://www.teamviewer.com/en/teamviewer-tensor/">TeamViewer Tensor</a></li>
+<li id="menu-item-233770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-233770"><a href="/en/iot/">TeamViewer IoT</a></li>
+<li id="menu-item-183467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183467"><a href="https://www.teamviewer.com/ru/augmented-reality/">TeamViewer Pilot</a></li>
+<li id="menu-item-183476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183476"><a href="https://www.teamviewer.com/ru/remote-management/">TeamViewer Remote Management</a></li>
+<li id="menu-item-254367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254367"><a href="/en/solutions/support-ticket-system/">TeamViewer Servicecamp</a></li>
+<li id="menu-item-361229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-361229"><a href="https://www.teamviewer.com/ru/meeting/">TeamViewer Meeting</a></li>
+</ul></div></section><section id="nav_menu-12" class="widget widget_nav_menu wd-footer-menu"><h3 class="widget-title">Популярные темы</h3><div class="menu-footer_menu_2-russian-2-container"><ul id="menu-footer_menu_2-russian-2" class="menu"><li id="menu-item-183571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183571"><a href="https://www.teamviewer.com/ru/%d1%86%d0%b5%d0%bd%d1%82%d1%80-%d1%83%d0%bf%d1%80%d0%b0%d0%b2%d0%bb%d0%b5%d0%bd%d0%b8%d1%8f-%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d1%8c%d1%8e/">Центр управления безопасностью</a></li>
+<li id="menu-item-183592" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183592"><a target="_blank" rel="noopener noreferrer" href="https://login.teamviewer.com/">Консоль управления</a></li>
+<li id="menu-item-183593" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183593"><a href="/ru/решения/поддержка-мобильных-устройств/">Поддержка мобильных устройств</a></li>
+<li id="menu-item-183632" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183632"><a href="https://community.teamviewer.com/">Сообщество</a></li>
+<li id="menu-item-189243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189243"><a href="/en/gdpr">GDPR</a></li>
+<li id="menu-item-199450" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199450"><a href="https://www.teamviewer.com/product-descriptions/">Описание продукта</a></li>
+</ul></div></section><section id="nav_menu-13" class="widget widget_nav_menu wd-footer-menu"><h3 class="widget-title">Решения</h3><div class="menu-footer_menu_3-russian-2-container"><ul id="menu-footer_menu_3-russian-2" class="menu"><li id="menu-item-183676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183676"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%83%d0%b4%d0%b0%d0%bb%d0%b5%d0%bd%d0%bd%d0%b0%d1%8f-%d0%bf%d0%be%d0%b4%d0%b4%d0%b5%d1%80%d0%b6%d0%ba%d0%b0/">Удаленная поддержка</a></li>
+<li id="menu-item-183677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183677"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%83%d0%b4%d0%b0%d0%bb%d0%b5%d0%bd%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d1%81%d1%82%d1%83%d0%bf/">Удаленный доступ</a></li>
+<li id="menu-item-183678" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183678"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%83%d0%b4%d0%b0%d0%bb%d0%b5%d0%bd%d0%bd%d1%8b%d0%b9-%d1%80%d0%b0%d0%b1%d0%be%d1%87%d0%b8%d0%b9-%d1%81%d1%82%d0%be%d0%bb/">Удаленный рабочий стол</a></li>
+<li id="menu-item-183765" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183765"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d1%81%d0%be%d0%b2%d0%bc%d0%b5%d1%81%d1%82%d0%bd%d0%b0%d1%8f-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b0/">Совместная работа</a></li>
+<li id="menu-item-183766" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183766"><a href="https://www.teamviewer.com/ru/%d1%80%d0%b5%d1%88%d0%b5%d0%bd%d0%b8%d1%8f/%d0%bf%d0%be%d0%b4%d0%b4%d0%b5%d1%80%d0%b6%d0%ba%d0%b0-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d1%85-%d1%83%d1%81%d1%82%d1%80%d0%be%d0%b9%d1%81%d1%82%d0%b2/">Поддержка мобильных устройств</a></li>
+</ul></div></section> </aside>
+</div>
+</div>
+<a id="back_to_top_button" title="Go to top"></a>
+<footer class="wd-site-footer">
+<div class="wd-bottom-footer-area">
+<nav id="footer-navigation" class="footer-navigation">
+<ul id="menu-bottom-footer-tv-russian" class="wd-tv-footer-menu"><li class="menu-item wd-language-switcher"><a class="wd-modal-link" href="#wd-geo-preference" rel="modal:open">Русский | RU</a></li><li id="menu-item-189322" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189322"><a href="/en/address/">Выходные данные</a></li>
+<li id="menu-item-183387" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183387"><a href="/ru/support/contact/">Контакты</a></li>
+<li id="menu-item-189323" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189323"><a href="/en/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-189324" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189324"><a href="/en/eula/">EULA</a></li>
+<li id="show-cookie-settings-footer" class="wd-tv-footer-menu__hidden">
+<span class="wd-button wd-button--highlight-inverted__intensive">
+<a id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</a>
+</span>
+</li>
+</ul> </nav>
+</div>
+<div class="wd-tv-footer-social">
+<span>
+Следите за нашими новостями: </span>
+<ul class="wd-social-items">
+<li>
+<a href="https://www.facebook.com/teamviewer/" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="6.958" height="14.977" viewBox="0 0 6.958 14.977"><title>Facebook Icon</title>
+<g id="facebook" transform="translate(0 0)">
+<path id="Path_52" data-name="Path 52" d="M394.005,221.428v7.241a.189.189,0,0,0,.189.189h2.689a.189.189,0,0,0,.189-.189V221.31h1.95a.188.188,0,0,0,.188-.173l.188-2.217a.189.189,0,0,0-.188-.2h-2.137v-1.573a.668.668,0,0,1,.668-.668h1.5a.189.189,0,0,0,.189-.189V214.07a.189.189,0,0,0-.189-.189H396.7a2.7,2.7,0,0,0-2.7,2.7v2.137h-1.344a.189.189,0,0,0-.189.189v2.217a.188.188,0,0,0,.189.189h1.344Z" transform="translate(-392.472 -213.881)" fill="#038ff4" fill-rule="evenodd" />
+</g>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://twitter.com/teamviewer" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="14.562" height="11.994" viewBox="0 0 14.562 11.994"><title>Twitter Icon</title>
+<g id="twitter" transform="translate(0 0)">
+<g id="Group_29" data-name="Group 29" transform="translate(0 0)">
+<path id="Path_47" data-name="Path 47" d="M317.065,218.576a5.968,5.968,0,0,1-1.471.42c.237-.04.586-.469.726-.642a2.71,2.71,0,0,0,.49-.892c.013-.026.022-.058,0-.077a.083.083,0,0,0-.078.006,7.5,7.5,0,0,1-1.747.669.116.116,0,0,1-.12-.032,1.414,1.414,0,0,0-.153-.156,3.092,3.092,0,0,0-.846-.519,2.947,2.947,0,0,0-1.3-.209,3.1,3.1,0,0,0-1.231.348,3.172,3.172,0,0,0-.993.812,3.054,3.054,0,0,0-.594,1.188,3.217,3.217,0,0,0-.031,1.255c.009.07,0,.08-.06.07a9.331,9.331,0,0,1-6-3.056c-.07-.08-.108-.08-.166.006a3.045,3.045,0,0,0,.519,3.6c.118.111.238.223.369.325a3.05,3.05,0,0,1-1.159-.325c-.07-.044-.105-.019-.111.06a1.814,1.814,0,0,0,.019.344,3.079,3.079,0,0,0,1.9,2.454,1.781,1.781,0,0,0,.385.118,3.431,3.431,0,0,1-1.136.035c-.083-.016-.114.026-.083.105a3.2,3.2,0,0,0,2.388,2c.108.019.217.019.325.044-.007.01-.013.01-.019.019a3.788,3.788,0,0,1-1.631.864,5.841,5.841,0,0,1-2.476.317c-.133-.02-.161-.018-.2,0s0,.054.038.089c.169.112.341.211.515.306a8.194,8.194,0,0,0,1.655.662,8.818,8.818,0,0,0,8.559-2,8.983,8.983,0,0,0,2.368-6.552c0-.094.111-.146.178-.2a5.768,5.768,0,0,0,1.159-1.212.353.353,0,0,0,.072-.232v-.013C317.12,218.538,317.125,218.55,317.065,218.576Z" transform="translate(-302.559 -217.139)" fill="#038ff4" />
+</g>
+<g id="Group_30" data-name="Group 30" transform="translate(4.324 11.942)">
+<path id="Path_48" data-name="Path 48" d="M312.006,243.228Z" transform="translate(-312.006 -243.228)" fill="#038ff4" fill-rule="evenodd" />
+</g>
+<g id="Group_31" data-name="Group 31" transform="translate(4.213 11.942)">
+<path id="Path_49" data-name="Path 49" d="M311.874,243.228c-.019,0-.24,0,0,0Z" transform="translate(-311.763 -243.228)" fill="#038ff4" fill-rule="evenodd" />
+</g>
+<g id="Group_32" data-name="Group 32" transform="translate(4.815 11.944)">
+<path id="Path_50" data-name="Path 50" d="M313.077,243.243c0-.024.258,0,0,0C313.077,243.23,313.109,243.243,313.077,243.243Z" transform="translate(-313.077 -243.232)" fill="#038ff4" fill-rule="evenodd" />
+</g>
+<g id="Group_33" data-name="Group 33" transform="translate(9.905 0.018)">
+<path id="Path_51" data-name="Path 51" d="M324.257,217.177a.051.051,0,0,1-.06,0Z" transform="translate(-324.197 -217.177)" fill="#038ff4" fill-rule="evenodd" />
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/TeamViewer" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="14.738" height="10.317" viewBox="0 0 14.738 10.317"><title>Youtube Icon</title>
+<g id="youtube" transform="translate(0 0)"><g id="Group_36" data-name="Group 36" transform="translate(0 0)"><path id="Path_53" data-name="Path 53" d="M480.889,158.071a3.208,3.208,0,0,0-3.208-3.208h-8.321a3.208,3.208,0,0,0-3.208,3.208v3.9a3.208,3.208,0,0,0,3.208,3.208h8.321a3.208,3.208,0,0,0,3.208-3.208Zm-5.25,2.146-3.319,1.82c-.144.078-.274-.026-.274-.19v-3.736c0-.166.134-.27.278-.188l3.342,1.916A.218.218,0,0,1,475.639,160.218Z" transform="translate(-466.151 -154.863)" fill="#038ff4" /></g></g></svg>
+</a>
+</li>
+<li>
+<a href="https://www.linkedin.com/company/teamviewer/" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="13.175" height="12.583" viewBox="0 0 13.175 12.583"><title>Linkedin Icon</title>
+<g id="linkedin" transform="translate(0 0)">
+<g id="Group_40" data-name="Group 40" transform="translate(0.184 3.9)">
+<g id="Group_39" data-name="Group 39">
+<path id="Path_57" data-name="Path 57" d="M400.116,292.892v4.657a.208.208,0,0,1-.208.208h-2.4a.208.208,0,0,1-.209-.208v-4.331c0-1.14-.407-1.918-1.429-1.918a1.542,1.542,0,0,0-1.446,1.031,1.922,1.922,0,0,0-.093.688v4.53a.209.209,0,0,1-.209.208h-2.4a.208.208,0,0,1-.208-.208c.006-1.154.03-6.749.005-8.065a.207.207,0,0,1,.208-.211h2.4a.209.209,0,0,1,.208.209v.994c-.005.01-.014.019-.019.028h.019v-.028a2.8,2.8,0,0,1,2.542-1.4c1.856,0,3.247,1.213,3.247,3.818Zm-12.782,4.865h2.4a.208.208,0,0,0,.208-.208v-8.067a.209.209,0,0,0-.208-.209h-2.4a.208.208,0,0,0-.208.209v8.067A.208.208,0,0,0,387.334,297.757Z" transform="translate(-387.126 -289.074)" fill="#038ff4" />
+</g>
+</g>
+<g id="Group_41" data-name="Group 41" transform="translate(0 0)">
+<ellipse id="Ellipse_11" data-name="Ellipse 11" cx="1.51" cy="1.51" rx="1.51" ry="1.51" fill="#038ff4" />
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/TeamViewer/" target="_blank" rel="noopener">
+<svg xmlns="http://www.w3.org/2000/svg" width="15.623" height="15.623" viewBox="0 0 15.623 15.623"><title>Instagram Icon</title>
+<g id="instagram" transform="translate(0 0)">
+<path id="Path_54" data-name="Path 54" d="M476.022,213.461h-6.211a4.706,4.706,0,0,0-4.706,4.706v6.211a4.706,4.706,0,0,0,4.706,4.706h6.211a4.706,4.706,0,0,0,4.706-4.706v-6.211A4.706,4.706,0,0,0,476.022,213.461Zm3.232,10.917a3.232,3.232,0,0,1-3.232,3.232h-6.211a3.232,3.232,0,0,1-3.232-3.232v-6.211a3.232,3.232,0,0,1,3.232-3.232h6.211a3.232,3.232,0,0,1,3.232,3.232Z" transform="translate(-465.106 -213.461)" fill="#038ff4" />
+<path id="Path_55" data-name="Path 55" d="M490.06,219.744a.918.918,0,1,0,.919.919A.919.919,0,0,0,490.06,219.744Z" transform="translate(-478.14 -216.868)" fill="#038ff4" />
+<path id="Path_56" data-name="Path 56" d="M477.658,222.317a3.858,3.858,0,1,0,3.857,3.858A3.863,3.863,0,0,0,477.658,222.317Zm0,6.329a2.471,2.471,0,1,1,2.471-2.471A2.474,2.474,0,0,1,477.658,228.646Z" transform="translate(-469.82 -218.263)" fill="#038ff4" />
+</g>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+</footer>
+<div id="wd-geo-preference" class="modal">
+<h3>Выберите свои предпочтения</h3>
+<form class="wd-geo-preference-form" name="geo-preference-form" onSubmit="return tv_setGeoPreference(event, 'RU')">
+<label class="wd-geo-preference-form__label" for="wd-js-language-selector">Выбранный язык</label>
+<div class="wd-geo-preference-form__select-wrapper">
+<select id="wd-js-language-selector" name="language-selector" class="wd-geo-preference-form__select">
+<option value="cs===http://www.teamviewer.com/cs/">Čeština</option><option value="da===http://www.teamviewer.com/da/">Dansk</option><option value="en===http://www.teamviewer.com/en/">English</option><option value="es===http://www.teamviewer.com/es/">Español</option><option value="es-mx===http://www.teamviewer.com/es-mx/">Spanish-MX</option><option value="en-us===http://www.teamviewer.com/en-us/">English-US</option><option value="fi===http://www.teamviewer.com/fi/">Suomi</option><option value="fr===http://www.teamviewer.com/fr/">Français</option><option value="fr-ca===http://www.teamviewer.com/fr-ca/">French-CA</option><option value="de===http://www.teamviewer.com/de/">Deutsch</option><option value="hu===http://www.teamviewer.com/hu/">Magyar</option><option value="it===http://www.teamviewer.com/it/">Italiano</option><option value="ja===http://www.teamviewer.com/ja/">日本語</option><option value="ko===http://www.teamviewer.com/ko/">한국어</option><option value="nl===http://www.teamviewer.com/nl/">Nederlands</option><option value="no===http://www.teamviewer.com/no/">Norsk bokmål</option><option value="pl===http://www.teamviewer.com/pl/">Polski</option><option value="pt-br===http://www.teamviewer.com/pt-br/">Português</option><option selected="selected" value="ru===http://www.teamviewer.com/ru/">Русский</option><option value="sv===http://www.teamviewer.com/sv/">Svenska</option><option value="th===http://www.teamviewer.com/th/">ไทย</option><option value="tr===http://www.teamviewer.com/tr/">Türkçe</option><option value="vi===http://www.teamviewer.com/vi/">Tiếng Việt</option><option value="cn===http://www.teamviewer.cn/cn/">Chinese Simplified</option><option value="tw===http://www.teamviewer.com/tw/">Chinese Traditional</option>
+</select>
+</div>
+<button type="submit" class="wd-geo-preference-form__button">Сохранить</button>
+</form>
+</div>
+<style> 
+@media (max-width: 767px) {
+.teamviewer-left {
+background: none!important;
+background-image: url(https://static.teamviewer.com/resources/2020/07/bg_header-homepage_dark.jpg)!important;
+padding-top:50px;
+padding-bottom:50px;
+}
+.ubimax-right {
+background: none!important;
+background-image: url(https://static.teamviewer.com/resources/2020/07/bg_header-homepage_light.jpg)!important;
+padding-top:50px;
+padding-bottom:50px;
+padding-left: 20px;
+padding-right: 20px;
+}
+.hide-mobile {display:none}
+.vc_custom_1594751519564 {
+background: none!important;
+padding: 0px !important;
+}
+.vc_custom_1594891465578 {
+background: none!important;
+padding: 0px !important;
+}
+.ubimax-right .wpb_text_column .wpb_wrapper {
+	margin-left: 0 !important;
+}
+.wd-header * {
+    text-align: center !important;
+}
+.breaking-news {display:none; }
+}
+}
+</style>
+<script>
+/*Info Box*/
+function info_box_set_auto_height(){jQuery(".aio-icon-box.square_box-icon").each(function(i,t){var e=jQuery(window).width()||"";if(""!=e)if(768<=e){var o=jQuery(this).attr("data-min-height")||"";""!=o&&jQuery(this).css("min-height",o)}else jQuery(this).css("min-height","initial")})}jQuery(window).load(function(i){info_box_set_auto_height()}),jQuery(document).ready(function(i){info_box_set_auto_height(),jQuery(window).resize(function(i){info_box_set_auto_height()})});
+</script>
+<script src="https://s.cdpn.io/409269/siema.min.js"></script>
+<script>
+var slideIndex = 1;
+const slideshow = new Siema({
+  selector: '.slider',
+  duration: 250,
+  loop: true,
+  startIndex: 0,
+  draggable: true,
+  threshold: 200,
+  onInit: function(){
+	setInterval(function(){ slideshow.next();}, 4000)
+  },
+  onChange: function(){
+	document.getElementById("dot" + slideIndex).classList.remove("active");
+	slideIndex = (slideIndex == 3) ? 1 : slideIndex + 1;
+	document.getElementById("dot" + slideIndex).classList.add("active");
+  }
+});
+
+jQuery(".fa-angle-left").on("click", function() {
+  document.getElementById("dot" + slideIndex).classList.remove("active");
+  slideIndex = (slideIndex == 3) ? 1 : slideIndex + 1;
+  slideshow.prev();
+});
+
+jQuery(".fa-angle-right").on("click", function() {
+  slideshow.next();
+});
+</script><script type="text/html" id="wpb-modifications"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded',function(){var wpacuLinkTag1001=document.createElement('link');wpacuLinkTag1001.rel='stylesheet';wpacuLinkTag1001.href='https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/css/tvdefault.min.css?ver=2.0.20';wpacuLinkTag1001.type='text/css';wpacuLinkTag1001.media='all';wpacuLinkTag1001.property='stylesheet';document.body.prepend(wpacuLinkTag1001)})</script><noscript><link   rel='preload' as='style' data-wpacu-preload-it-async='1' onload="this.onload=null;this.rel='stylesheet'" id='wpacu-moved-from-head-to-body-wpacu-preload-tv-theme-default-css'  href='https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/css/tvdefault.min.css?ver=2.0.20' type='text/css' media='all' /></noscript>
+<script type="text/javascript">document.addEventListener('DOMContentLoaded',function(){var wpacuLinkTag1002=document.createElement('link');wpacuLinkTag1002.rel='stylesheet';wpacuLinkTag1002.href='https://www.teamviewer.com/wp-includes/css/dist/block-library/style.min.css';wpacuLinkTag1002.type='text/css';wpacuLinkTag1002.media='all';wpacuLinkTag1002.property='stylesheet';document.body.prepend(wpacuLinkTag1002)})</script><noscript><link   rel='preload' as='style' data-wpacu-preload-it-async='1' onload="this.onload=null;this.rel='stylesheet'" id='wpacu-moved-from-head-to-body-wpacu-preload-wp-block-library-css'  href='https://www.teamviewer.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' /></noscript>
+<link rel='stylesheet' id='ult-background-style-css' href='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/background-style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='vc_font_awesome_5_shims-css' href='https://www.teamviewer.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/v4-shims.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='vc_font_awesome_5-css' href='https://www.teamviewer.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/all.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='templatera_inline-css' href='https://www.teamviewer.com/wp-content/plugins/templatera/assets/css/front_style.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/home.min.js?ver=2.0.20' id='tv-theme-home-page-js-js'></script>
+<script type='text/javascript' src='https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/tvdefault.min.js?ver=2.0.20' id='tv-theme-default-js-js'></script>
+<script type='text/javascript' src='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/info-box.min.js' id='info_box_js-js'></script>
+<script type='text/javascript' src='https://www.teamviewer.com/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://www.teamviewer.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js' id='wpb_composer_front_js-js'></script>
+<script type='text/javascript' src='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/ultimate_bg.min.js' id='ultimate-row-bg-js'></script>
+<script type='text/javascript' src='https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/vhparallax.min.js' id='jquery.vhparallax-js'></script>
+<noscript><link rel="stylesheet" href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/css/tvdefault.min.css?ver=2.0.20" media="all" /></noscript>
+<noscript><link rel="stylesheet" href="https://www.teamviewer.com/wp-includes/css/dist/block-library/style.min.css" media="all" /></noscript>
+</div>
+</body>
+</html>

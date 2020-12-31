@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+	<title>Электронный журнал в школе: проблемы и реализация&nbsp;– Электронный журнал ЭлЖур.ру · Eljur.Ru</title>
+	<meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+	
+	
+
+<link rel="stylesheet" type="text/css" href="/min/g=css?20131220" />
+
+
+	<link rel="shortcut icon" href="/inc/html/default/img/favicon.ico" />
+	<link rel="alternate" type="application/rss+xml" title="Subscribe to RSS" href="/news-rss-action" />
+
+	
+
+	
+	<script type="text/javascript" src="/min/g=js1?20121008"></script>
+	<script type="text/javascript" src="/js/superfish.js"></script>
+
+	
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("ul.superfish").superfish({animation:   {opacity:'show',height:'show'}});
+	 $('.lightbox').lightbox();
+});
+</script>
+
+<style type="text/css">
+.hidepic {display:none}
+</style>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15144109-1']);
+  _gaq.push(['_setDomainName', '.eljur.ru']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script type="text/javascript">
+krishka = function( id, bt ){
+   $( ".button.user" ).addClass("clicked").removeClass("selected");
+   $( "#" + bt ).addClass("selected");
+   $( ".btc" ).hide();
+   $( "#" + id ).show();
+}
+</script>
+
+<link rel="alternate" type="application/rss+xml" href="http://eljur.ru/news-rss-action/nomenu.1" />
+<meta name="description" content="Каким должен быть школьный электронный журнал? Как сделать его лучше? Проблемы и реализация онлайнового сервиса учета успеваемости" />
+<meta name="keywords" content="аттестация учащихся, для ученика, для учителя, для школы, интернет-школа, информатизация школ, классный журнал, оценки, проблемы школ, родители и учителя, успеваемость, учет успеваемости в школе, школа, школьные оценки в интернете, школьный журнал, школьный журнал в интернете, школьный журнал успеваемости, электронная школа, электронный дневник, электронный журнал, электронный классный журнал, электронный школьный журнал, администрация школы, дневник, оценки в школе" />
+</head>
+<body class="page blog header-image content-sidebar">
+
+<div id="wrap">
+
+	<div id="header">
+	<div class="wrap">
+
+		<div id="title-area">
+			<span class="h2"><a href="/">ЭлЖур<br /><span class="tagline">Электронный журнал для школы</span></a></span>
+			<a href="/novosti-elektronnogo-zhurnala" title="Новое в журнале"><span class="version"> v4.0</span></a>
+			
+		</div>
+
+				<div id="floating" class="widget-area">
+	<div><div>
+		
+<p id="description">
+	<cite>Классный журнал в интернете – это</cite><br />
+	
+	
+		решение проблем с учетом успеваемости <br/>и контролем посещаемости учебных занятий
+	
+	
+	
+</p>
+
+	</div></div>
+
+		</div>
+
+	</div>
+	</div>
+
+
+<div id="nav"><div class="wrap">
+	<ul class='superfish'>
+	<li><a href="/elektronnyi-klassnyi-zhurnal">О системе</a>
+<ul class='superfish'>
+	<li><a href="/preimuschestva-elektronnogo-zhurnala">Преимущества</a>
+	</li>
+	<li><a href="/elektronnyj-zhurnal-sootvetstvuet-trebovaniyam-ministerstva-obrazovaniya-i-nauki">Соответствие требованиям</a>
+	</li>
+	<li><a href="/normativnye-dokumenty">Нормативная база</a>
+	</li>
+	<li><a href="/zashchita-i-bezopasnost-personalnyh-dannyh-v-elektronnom-zhurnale">Защита ПДн</a>
+	</li>
+	<li><a href="/blagodarnosti-ot-shkol">Благодарности</a>
+	</li>
+	<li><a href="/spravochnaya-informaciya-eljur">Визитка ЭлЖур</a>
+	</li>
+</ul>
+	</li>
+	<li><a href="/products">Продукты</a>
+<ul class='superfish'>
+	<li><a href="/ais-eljur-besplatnyj-zhurnal-dnevnik">АИС ЭлЖур</a>
+	</li>
+	<li><a href="/eljur-statistika">ЭлЖур.Статистика</a>
+	</li>
+	<li><a href="/arm-zavuch---novoe-slovo-v-avtomatizacii-upravleniya-uchebnym-processom">АРМ Завуч</a>
+	</li>
+	<li><a href="/elzhur_video---servis-dlya-provedeniya-onlajn-urokov-v-shkole">ЭлЖур.Видео</a>
+	</li>
+	<li><a href="/elzhur_uchitel---mobilnoe-prilozhenie-dlya-uchitelej">ЭлЖур.Учитель</a>
+	</li>
+	<li><a href="/elektronnyj-dnevnik-v-mobilnom-telefone">ЭлЖур.Дневник</a>
+	</li>
+	<li><a href="/kak-shkole-pechatat-attestaty-v-2018-godu">Печать аттестатов</a>
+	</li>
+	<li><a href="/pechat-bumazhnyh-zhurnalov">Печать журналов</a>
+	</li>
+	<li><a href="/roditel-pro-kontrol-uspevaemosti-detey">Родительский контроль</a>
+	</li>
+	<li><a href="/vse-funkcii-elektronnogo-zhurnala-dlya-shkol">Перечень функций</a>
+	</li>
+</ul>
+	</li>
+	<li><a href="/elektronniy-zhurnal-uspevaemosti">Школам</a>
+<ul class='superfish'>
+	<li><a href="/edinoe-it-prostranstvo-shkoly">Единое пространство</a>
+	</li>
+	<li><a href="/vozmozhnosti-otchetov-i-analitika-elzhur">Отчеты для школы</a>
+	</li>
+	<li><a href="/webinary-dlya-uchiteley">Вебинары</a>
+	</li>
+	<li><a href="/elektronnyj-zhurnal-video-dlya-uchiteley">Видео-инструкции</a>
+	</li>
+	<li><a href="/obuchenie-uchiteley-rabote-s-elektronnym-zhurnalom">Обучение</a>
+	</li>
+	<li><a href="/otzivy-uchitelej-ob-elektronnom-zhurnale">Отзывы школ</a>
+	</li>
+	<li><a href="/podkluchenie">Подключить школу</a>
+	</li>
+</ul>
+	</li>
+	<li><a href="/elektronniy-dnevnik-shkolnika">Родителям</a>
+<ul class='superfish'>
+	<li><a href="/otzivy-elektronniy-dnevnik">Отзывы родителей</a>
+	</li>
+	<li><a href="/pravila-raboty-elektronniy-dnevnik">Правила работы</a>
+	</li>
+</ul>
+	</li>
+	<li><a href="/partneram">Партнерам</a>
+<ul class='superfish'>
+	<li><a href="/predstavitelstvo">Представительство</a>
+	</li>
+	<li><a href="/nashi-regiony">Наши регионы</a>
+	</li>
+	<li><a href="/sotrudnichestvo">Наши партнеры</a>
+	</li>
+</ul>
+	</li>
+	<li><a href="/specialproject">Спецпроекты</a>
+	</li>
+	<li><a href="/news">Статьи</a>
+	</li>
+</ul>
+
+
+	
+
+<div class="orderbutton"><a href="/podkluchenie"><span lang="ru" xml:lang="ru">Подключить школу</span></a></div>
+
+	</div></div>
+
+
+
+<div id="inner">
+<div id="content-sidebar-wrap">
+
+		<div class="hfeed" id="content">
+				
+				<div class="breadcrumb"><span class="alignright" style="margin-right: 10px"><span title="18 июня 2010" class="date time published post-info">18 июня 2010</span></span><span class="caption"></span><a href="/">Главная</a> / <a href="/news">Статьи</a> / Электронный журнал в школе: проблемы и реализация</div>
+
+
+
+
+
+			<div class="post">
+			<h1>Электронный журнал в школе: проблемы и реализация</h1>
+				
+
+
+
+
+
+
+
+<!--
+
+<p class="news-byline">By <a href="/news-app/author.Редактор">Редактор</a></p>
+
+
+<p class="news-dateline">18 июня 2010</p>
+
+
+-->
+
+<div class="entry-content"><div class="post-info"></div>
+<blockquote><p>В связи с <strong class="n">внедрением компьютерных технологий</strong> в жизнь школы, возникла возможность ведения <strong class="n">электронного школьного классного журнала</strong>, который автоматизирует процесс <strong class="n">контроля за успеваемостью</strong>, дублирует записи 
+<strong class="n">школьного журнала</strong>, защищая его от искажений, даёт возможность 
+<strong class="n">контролировать накопляемость оценок</strong> по предметам.</p>
+
+</blockquote>
+
+<a name="1a7361f8d2429510985bf1236ee3d881" style="margin: 0px; padding: 0px; display: inline"></a><h4>Каким должен быть классный электронный журнал?</h4>
+
+<p>Исходя из понимания назначения журнала, а также собрав мнения 
+учителей, <strong class="n">администрации школ и родителей учеников</strong>, можно прийти к 
+следующим выводам о том, каким должен быть <strong class="n">школьный электронный журнал</strong>:</p>
+
+<ol><li><strong class="n">Электронный журнал</strong> должен быть похож на <strong class="n">школьный бумажный журнал</strong> и 
+иметь простой способ заполнения.</li>
+
+<li><strong class="n">Данные ученика об оценках</strong> (а также другие сведения, вносимые в 
+электронный журнал, такие как замечания, пропуски и т.д.) должны быть 
+доступны только тем, кто имеет право их видеть: учителя, администрация 
+школы, родители (в <strong class="n">электронном дневнике ученика</strong>).</li>
+
+<li><strong class="n">Ученики и их родители</strong> имеют возможность <strong class="n">контролировать среднюю 
+оценку</strong> по предметам, тем самым работать над <strong class="n">повышением успеваемости</strong>.</li>
+
+<li>Должен осуществляться <strong class="n">контроль количества и полноты выставляемых 
+оценок</strong>, обеспечивающий корректную <strong class="n">аттестацию учащихся</strong>.</li>
+
+<li><strong class="n">Классный руководитель и администрация школы</strong> должны иметь инструменты
+ контроля и диагностики <strong class="n">успеваемости класса</strong>.</li>
+
+<li><strong class="n">Электронный журнал</strong> должен обеспечивать возможность <strong class="n">контроля за 
+пропусками уроков</strong>, по дате и по предмету, а также давать возможность 
+квалифицировать эти пропуски по причинам – уважительные, неуважительные,
+ по болезни.</li>
+
+<li>Пользователи <strong class="n">электронного журнала</strong> должны иметь возможность на 
+странице с оценками класса визуально различать оценки за контрольные, 
+самостоятельные и другие виды работ.</li>
+
+</ol>
+
+<br />
+
+<blockquote>
+<p><a href="/vse-funkcii-elektronnogo-zhurnala-dlya-shkol"><strong>Ознакомьтесь: Полный перечень функций Электронного журнала</strong></a></p>
+
+</blockquote>
+
+<br />
+
+<a name="c0feb7edf77d78683b8389efe905cb88" style="margin: 0px; padding: 0px; display: inline"></a><h4>Как сделать лучший электронный школьный журнал?</h4>
+
+<p>Цель <strong class="n">электронного журнала</strong> – способствовать своевременному выявлению 
+учебных и других проблем <strong class="n">учащихся средних школ</strong>; их ликвидации 
+посредством целенаправленных действий; прогнозированию дальнейшей 
+<strong class="n">деятельности учителя и ученика</strong> по повышению уровня предметной 
+обученности.</p>
+
+<p>Реализуя наш <strong class="n">Электронный журнал для школ</strong>, мы учли опыт 
+преподавательского состава, проанализировали практику <strong class="n">учета 
+успеваемости</strong>, привлекли административных работников образовательных 
+учреждений – с целью создать самый простой, интуитивно понятный и 
+удобный инструмент для работы <strong class="n">учителя и классного руководителя</strong>, завуча и
+ директора, родителей и самих школьников.</p>
+
+<p>При этом мы создали <strong class="n">Электронный журнал</strong>, который не требует ничего, 
+кроме доступа в интернет. А это значит, что он доступен любому 
+зарегистрированному пользователю с любого компьютера, подключенного к 
+интернету. Учителя могут работать с ним из дома, а родители смотреть за 
+успехами ребенка – прямо с работы. Это позволяет сэкономить массу 
+времени. Это удобно!</p>
+
+
+</div>
+<!--
+<br /><br />
+<div class="post-meta"></div>
+-->
+
+<!--
+
+
+<p class="news-links">
+	
+	
+	<a href="/news-app/menu.no/sec.">More News</a>
+	
+</p>
+
+-->
+
+
+
+		 	</div>
+		 	
+		 	<div class="post-meta"></div>
+		 	
+		 	<div class="social">
+<script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
+
+<div class="yashare-auto-init" data-yashareL10n="ru" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,gplus" data-yashareTheme="counter"></div> 
+</div>
+		 	
+	</div>
+
+	<div id="sidebar">
+	<div class="scm-sidebar" id="scm-sidebar-hotline"><div class="scm-sidebar-body"><div class="phone800">
+<p><strong>Бесплатная линия</strong></p>
+
+<p class="phone">8 (800) 555-22-50 </p>
+
+<p class="small">пн-пт 8-19, сб 8-15 </p>
+
+</div>
+
+</div></div><div class="scm-sidebar" id="scm-sidebar-news"><div class="scm-sidebar-body"><h4 class="widgettitle"><a class="" title="Первый вебинар ЭлЖур" href="/pervyj-vebinar-elzhur">Первый вебинар ЭлЖур</a></h4>
+<a class="" title="Первый вебинар ЭлЖур" href="/pervyj-vebinar-elzhur">
+<!-- <span class="news-headline">Nov/07 - Первый вебинар ЭлЖур</span> --></a>
+
+<p>Состоялся первый вебинар, посвященный планированию и мониторингу контрольных работ, а также учету замен уроков в Электронном журнале</p>
+<p align="right" style=""><a title="Первый вебинар ЭлЖур" href="/pervyj-vebinar-elzhur">Подробнее &raquo;</a></p>
+
+</div></div><div class="scm-sidebar" id="scm-sidebar-related-links"><div class="scm-sidebar-body"><p class="h4">Материалы по теме</p>
+
+<ul>
+
+<li><a href="/elektronnyj-zhurnal-sootvetstvuet-trebovaniyam-ministerstva-obrazovaniya-i-nauki">Анализ соответствия методическим требованиям Минобразования</a></li>
+
+<li><a href="/dnevnik_ru-i-elzhur---sravnenie-vozmozhnostej-zhurnala-i-dnevnika">Дневник ру</a> – сравнение с ЭлЖур</li>
+
+<li><a href="/mrko-integratsia">Интеграция с МРКО</a></li>
+
+<li><a href="/kak-shkoly-prohodyat-proverki-kru-bez-bumazhnogo-zhurnala">ЭлЖур и проверки КРУ</a></li>
+
+<li><a href="/elektronnyi-klassnyi-zhurnal">Электронный классный журнал</a></li>
+
+<li><a href="/elektronniy-zhurnal-uspevaemosti">Электронный журнал успеваемости</a></li>
+
+<li><a href="/podkluchit-v-shkole-elektronniy-zhurnal">Как подключить электронный журнал</a></li>
+
+<li><a href="/elektronniy-dnevnik-shkolnika">Электронный дневник школьника</a></li>
+
+<li><a href="/otzivy-elektronniy-dnevnik">Отзывы родителей об электронном дневнике</a></li>
+
+<li class="last-related-link"><a href="/otzivy-uchitelej-ob-elektronnom-zhurnale">Отзывы учителей о работе с электронным журналом</a></li>
+
+</ul>
+
+</div></div><div class="scm-sidebar" id="scm-sidebar-random-video"><div class="scm-sidebar-body">
+
+	<h4 class="widgettitle">Как работать родителям</h4>
+	<a href="http://www.youtube.com/watch?v=bUXxSOWTm2s?rel=0" class="lightbox" rel="nofollow"><img src="http://img.youtube.com/vi/bUXxSOWTm2s/maxresdefault.jpg" width="260" height="146" /></a>
+	
+	
+	
+	<p style="margin: 10px 0 5px">Смотрите видео-инструкцию по работе родителей и учеников в электронном дневнике</p>
+</div></div>
+
+	</div>
+	
+</div><div class="clear"></div>
+
+</div>
+
+
+<div id="footer">
+<div class="wrap">
+	<div class="gototop vcard"><p><a href="/kontakty"><span lang="ru" xml:lang="ru">Контактная информация</span></a><br /><span class="fn org">Электронный журнал ЭлЖур</span> <span class="tel">+7 (495) 669-35-63</span> · <span class="adr"><span class="locality"><span lang="ru" xml:lang="ru">Москва</span></span></span></p></div><div class="creds"><p><span lang="ru" xml:lang="ru">Электронный журнал ЭлЖур · Eljur.Ru</span><br /> &copy; 2009–2020  · <a href="http://wmost.ru" rel="nofollow" target="_blank"><span lang="ru" xml:lang="ru">Студия</span> &laquo;<span lang="ru" xml:lang="ru">Веб-Мост</span>&raquo;</a></p></div></div>
+</div>
+
+</div>
+
+
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1470965 = new Ya.Metrika(1470965);
+             yaCounter1470965.clickmap(true);
+             yaCounter1470965.trackLinks(true);
+        
+        } catch(e) { }
+    });
+})(window, 'yandex_metrika_callbacks');
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/1470965" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+</body>
+
+</html>
